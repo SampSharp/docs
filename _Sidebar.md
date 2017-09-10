@@ -1,30 +1,48 @@
-
-Setup
------
-[Installation](installation)  
-[Configuration](configuration)  
-[Package Manager](package-manager)  
-[Building the Plugin](building-the-plugin)  
+Prologue
+--------
+- [Getting Started](getting-started)
+- [Starting Development](starting-development) [TODO]
+- [Upgrade Guide](upgrade-guide) [TODO]
 
 Basics
 ------
-[Starting Development](starting-development)
+- [GameMode Builder](gamemode-builder)
+- [GameMode](gamemode)
+- [Players](players) [TODO]
+- [NPCs](npcs) [TODO]
+- [Vehicles](vehicles) [TODO]
+- [Actors](actors) [TODO]
+- [Dialogs](dialogs) [TODO]
+- [Text Draws](textdraws) [TODO]
+- [Menus](menus) [TODO]
+- [Gang Zones](gangzones) [TODO]
+- [TextLabels](text-labels) [TODO]
+- [Objects](objects) [TODO]
+- [Player-Commands](player-commands)
+- [Accessing server.cfg](accessing-server.cfg)
+- [Controllers](controllers)
+- [Services](services) [TODO]
 
-Systems
--------
-[Player-Commands](player-commands)  
-[Callbacks](callbacks)  
-[Extensions](extensions)  
-[Natives](natives)  
-[Controllers](controllers)  
-[Accessing server.cfg](accessing-server.cfg)  
+Advanced
+--------
+- [Intermissions](intermissions) [TODO]
+- [Interacting with Plugins](interacting-with-plugins)
+- [Callbacks](callbacks) (TODO: Move to interacting-with-plugins)
+- [Natives](natives) (TODO: Move to interacting-with-plugins)
+- [Extensions](extensions)
+- [Pooling](pooling) [TODO]
+- [Threading](threading) [TODO]
+
+Developer Resources
+-------------------
+- [Building the Plugin](building-the-plugin) [TODO]
+- [SampSharp protocol](sampsharp-protocol) [TODO]
 
 Miscellaneous 
 -------------
-[Installing MySql.Data.dll on linux](installing-mysql.data.dll-on-linux)  
-[Useful snippets](useful-snippets)  
-[Converting Objects](converting-objects)
+- [Useful snippets](useful-snippets)
+- [Converting Objects](converting-objects)
 
 Contributing
 ------------
-[Documentation](documentation)  
+- [Documentation](documentation)

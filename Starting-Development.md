@@ -1,82 +1,34 @@
 - [Introduction](#introduction)
-- [Folder Structure](#folder-structure)
+- [Creating a Project](#creating-a-project)
 - [Referencing the Framework](#referencing-the-framework)
-- [Project Debug Settings](#project-debug-settings)
-- [Defining the Entry Point](#defining-the-entry-point)
+- [Creating a GameMode class](#creating-a-gamemode-class)
+- [Starting the Game Mode](#starting-the-game-mode)
 
 Introduction
 ------------
-This chapter contains a few tips and tricks for setting up your development environment. We assume you are running windows, you have already installed [Visual Studio](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx), the [NuGet package repository](package-manager), [the SA-MP server, Mono and SampSharp](installation).
+This page will focus on setting up your first game mode and giving you some
+direction on where to go from there. Before continuing, please make sure you've
+set up your server as described on the [Getting Started](getting-started) page.
 
-Folder Structure
-----------------
-To keep everything organised, it's useful to have a good folder structure. We will shortly discuss a simple but effective way to keep your server directory from cluttering.
-
-Create a folder(e.g. `YourGamemode`) and create two folders `env` (testing environment) and `src` (source code) inside it. Copy your server files into the `env` folder. Using Visual Studio, create a new solution inside the `src` folder:
-
-1. Inside Visual Studio click on `File > New > Project`... .
-1. In the tree on the left select `Templates > Visual C#`. Then select `Class Library` in the middle column.
-1. Name your project and uncheck `Create directory for solution`.
-1. Click on `Browse...` and select the `src` folder inside your development folder.
-1. Click on `OK`
-
-Your folder structure should start looking like this:
-```
-YourGamemode/
-    env/
-        plugins/
-            SampSharp.dll
-            ...
-        mono/
-            ...
-        filterscripts/
-            empty.amx
-            ...
-        gamemodes/
-            empty.amx
-            ...
-        gamemode/ (We'll make this folder in a later steps)
-            SampSharp.GameMode.dll
-            YourGamemode.dll
-            YourGamemode.dll.mdb
-        samp-server.exe
-        ...
-    src/
-        YourGamemode/
-            YourGamemode.csproj
-            GameMode.cs
-            ...
-        YourGamemode.sln
-```
+Creating a Project
+------------------
+TODO: Create the .NET Core console app.
 
 Referencing the Framework
 -------------------------
-To be able to interact with the server, you need to add the framework to your project's references.
+To be able to interact with the server, you need to add the framework to your
+project's references.
 
-1. Open your project using Visual Studio.
 1. In the Solution explorer, right click on References under your project.
 1. Click on `Manage NuGet Packages...`.
 1. Under `Online` select the SampSharp repository.
 1. Click on `Framework for SA-MP#` and click on Install.
 
-Project Debug Settings
-----------------------
-To be able to let the `Start Debugging (F5)` button start the server, you need to configure your project.
-
-1. Open your project using Visual Studio.
-1. In the Solution explorer, right click on your project.
-1. Click on `Properties`.
-1. In the properties menu on the left, select `Build`.
-1. Under `Output` set `Output path` to `..\..\env\gamemode\`.
-1. In the properties menu on the left, select `Debug`.
-1. Under `Start action` select and set `Start external program` to the path to your `samp-server.exe` using the browse(`...`) button.
-1. Under `Start Options` set `Working directory` to `..`.
-
 Defining the Entry Point
 ------------------------
 You can now create the entry point of your gamemode.
-In you project, create a class named `GameMode` and let it inherit from `BaseMode`.
-Next, you need to configure this entry point in your server.cfg. See the [Configuration](configuration) page for details.
+In you project, create a class named `GameMode` and let it inherit from
+`BaseMode`.
 
 Here is a simple GameMode class:
 
@@ -112,3 +64,8 @@ public class GameMode : BaseMode
     #endregion
 }
 ```
+
+Starting the Game Mode
+----------------------
+TODO: Create a GameModeBuilder, configure it and run it. Refer to
+[GameMode Builder](gamemode-builder) for details. 
