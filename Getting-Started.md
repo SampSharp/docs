@@ -1,5 +1,3 @@
-TODO.
-=======
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Installing the Plugin](#installing-the-plugin)
