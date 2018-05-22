@@ -9,6 +9,8 @@
 - [Default Values](#default-values)
 - [Usage Message](#usage-message)
 
+> NOTE: This page is for version v0.6.X, for version v0.7+, see [Player Commands](player-commands).
+
 Defining and Detecting Parameter Types
 --------------------------------------
 
