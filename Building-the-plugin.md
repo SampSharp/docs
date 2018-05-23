@@ -20,5 +20,3 @@ Linux
 - Build the makefiles: ```premake4 gmake```
 - Build the plugin: ```make``` (builds in debug mode) -or- ```make config=release32``` (builds in release mode).
 - If you build in debug mode, the library will be stored in ```environment/plugins```. If you build in release mode, the library wil be stored in ```bin```.
-
-[![Analytics](https://ga-beacon.appspot.com/UA-58691640-2/SampSharp/wiki.building.the.plugin?pixel)](https://github.com/igrigorik/ga-beacon)

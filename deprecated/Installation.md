@@ -2,6 +2,8 @@
 - [Install Mono](#install-mono)
 - [Install SampSharp](#install-sampsharp)
 
+> DEPRECATED DOCUMENTATION
+
 Install SA-MP
 ------------------------
 Download the latest SA-MP server from the [SA-MP download page](http://sa-mp.com/download.php) and extract it to your desired location.

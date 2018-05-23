@@ -1,8 +1,10 @@
-Prologue
---------
-- [Getting Started](getting-started)
+Getting Started
+---------------
+- [Introduction](introduction)
+- [Setup](setup)
 - [Starting Development](starting-development) [TODO]
-- [Upgrade Guide](upgrade-guide) [TODO]
+- [Configuration](configuration) [TODO]
+<!-- [Upgrade Guide](upgrade-guide) [TODO] -->
 
 Basics
 ------
