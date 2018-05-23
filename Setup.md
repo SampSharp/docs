@@ -18,6 +18,7 @@ SA-MP Server
 The SA-MP Server package can be downloaded from the 
 [SA-MP website](http://sa-mp.com). Once unzipped, open the `server.cfg` file
 with a text editor.
+
 - Add `plugins SampSharp` to the file
 - Change the `rcon_password` to a secure long password
 - Change `gamemode` to `empty 1`
