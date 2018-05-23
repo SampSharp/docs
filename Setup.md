@@ -7,6 +7,7 @@
 Introduction
 ------------
 In order to get started with SampSharp, you'll need to install a few things: 
+
 - A SA-MP server
 - The SampSharp plugin for the SA-MP server
 - Visual Studio and .NET Core
