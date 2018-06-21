@@ -526,6 +526,7 @@ public class MyCommand : DefaultCommand
     #endregion
 }
 
+[Controller]
 public class MyCommandController : CommandController
 {
     #region Overrides of CommandController
@@ -541,17 +542,6 @@ public class MyCommandController : CommandController
     }
 
     #endregion
-}
-
-public class GameMode : BaseMode
-{
-    protected override void LoadControllers(ControllerCollection controllers)
-    {
-        base.LoadControllers(controllers);
-
-         // Load our own command controller which registers our own command manager service.
-        controllers.Override(new MyCommandController());
-    }
 }
 ```
 
