@@ -53,7 +53,7 @@ class MyPlayer : BasePlayer
     private void HelloWorldCommand(int times)
     {
         for(var i = 0; i < times; i++)
-            sender.SendClientMessage("Hello, world!");
+            SendClientMessage("Hello, world!");
     }
 }
 ```
