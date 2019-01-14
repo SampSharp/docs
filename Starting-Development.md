@@ -8,7 +8,7 @@ Introduction
 ------------
 This page will focus on setting up your first game mode and giving you some
 direction on where to go from there. Before continuing, please make sure you've
-set up your server as described on the [Getting Started](getting-started) page.
+set up your server as described on the [Setup](setup) page.
 
 Creating a Project
 ------------------
