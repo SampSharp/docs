@@ -12,7 +12,11 @@ set up your server as described on the [Getting Started](getting-started) page.
 
 Creating a Project
 ------------------
-TODO: Create the .NET Core console app.
+1. Click on `File > New > Project` (Shortcut: `Ctrl + Shift + N`).
+1. Select `Visual C#` from the list on the left.
+1. Select `.NET Core` from the expanded sub-list and choose `Console App (.NET Core)` from the list in the center.
+1. Type the name and Location of your new Solution.
+1. Click `OK` to save.
 
 Referencing the Framework
 -------------------------
@@ -67,5 +71,14 @@ public class GameMode : BaseMode
 
 Starting the Game Mode
 ----------------------
-TODO: Create a GameModeBuilder, configure it and run it. Refer to
-[GameMode Builder](gamemode-builder) for details. 
+In the newly created project, you will have a class named `Program`. In that class, in the `Main` method, you will have to create a `GameModeBuilder`, which will run your gamemode (Refer to [GameMode Builder](gamemode-builder) for details on what a GameMode Builder is, how it works and different configuration options).
+
+A sample of a standard `Main` class:
+``` C#
+private static void Main(string[] args)
+{
+    new GameModeBuilder()
+        .Use<GameMode>()
+        .Run();
+}
+```
