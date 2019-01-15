@@ -1,4 +1,7 @@
-[Introduction](#introduction)
+- [Introduction](#introduction)
+- [Subclassing](#subclassing)
+- [Suggestions for ORM](#suggestions-for-orm)
+- [Entity Framework Core - Code First](#entity-framework-core-code-first)
 
 Introduction
 ------------
