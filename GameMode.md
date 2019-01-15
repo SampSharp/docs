@@ -1,5 +1,5 @@
-[Introduction](#introduction)
-[Initialization](#initialization)
+- [Introduction](#introduction)
+- [Initialization](#initialization)
 
 Introduction
 ------------
