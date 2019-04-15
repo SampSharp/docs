@@ -9,8 +9,8 @@ SampSharp supports all of the dialog styles from SA:MP, implemented in an object
 
 The available dialog classes are:
 
-| SampSharp class |  SA:MP Equivalent                                       |
-| --------------- | ------------------------------------------------        |
+| SampSharp class | SA:MP Equivalent                                        |
+|-----------------|---------------------------------------------------------|
 | `InputDialog`   | `DIALOG_STYLE_INPUT` or `DIALOG_STYLE_PASSWORD`         |
 | `MessageDialog` | `DIALOG_STYLE_MSGBOX`                                   |
 | `ListDialog`    | `DIALOG_STYLE_LIST`                                     |
