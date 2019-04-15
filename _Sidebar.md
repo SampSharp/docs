@@ -14,7 +14,7 @@ Basics
 - [NPCs](npcs) [TODO]
 - [Vehicles](vehicles) [TODO]
 - [Actors](actors) [TODO]
-- [Dialogs](dialogs) [TODO]
+- [Dialogs](dialogs)
 - [Text Draws](textdraws) [TODO]
 - [Menus](menus) [TODO]
 - [Gang Zones](gangzones) [TODO]
