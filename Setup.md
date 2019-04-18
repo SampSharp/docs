@@ -26,7 +26,7 @@ with a text editor.
 
 As of SampSharp 0.8:
 - Add a `coreclr` value which points to the dotnet runtime path.
-- Add a `gamemode` value which points to your gamemode dll path.
+- Add a `gamemode` value which points to your gamemode dll path. (see ["Publishing the project"](starting-development#publishing-the-project))
 
 ```
 echo Executing Server Config...

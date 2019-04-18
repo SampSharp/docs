@@ -85,11 +85,9 @@ private static void Main(string[] args)
 
 Publishing the project
 ----------------------
-After every change in the newly created project, you need to publish the project to have your gamemode `.dll` file and the dependencies.
+After every change in the newly created project, you need to (build and) publish the project to have your gamemode `.dll` file and the dependencies.
 
 1. Click on `Build > Publish x` (where x is your project name).
 1. Select so it publishes to a folder and provide a path.
 1. Click `Publish`
-1. Edit `gamemode` entry in the server config which points to the gamemode dll in the publish folder.
-
-Afterwards in the provided folder your gamemode dll is located together with the dependencies dll's.
+1. Edit `gamemode` entry in the server config which points to the generated gamemode `.dll` in the provided publish folder.
