@@ -11,6 +11,7 @@ Basics
 - [GameMode Builder](gamemode-builder)
 - [GameMode](gamemode)
 - [Players](players)
+- [Timers](timers) [TODO]
 - [NPCs](npcs) [TODO]
 - [Vehicles](vehicles) [TODO]
 - [Actors](actors) [TODO]
