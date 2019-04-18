@@ -21,8 +21,12 @@ with a text editor.
 
 - Add `plugins SampSharp` to the file
 - Change the `rcon_password` to a secure long password
-- Change `gamemode` to `empty 1`
+- Change `gamemode0` to `empty 1`
 - Remove the `filterscripts` value
+
+As of SampSharp 0.8:
+- Add a `coreclr` value which points to the dotnet runtime path.
+- Add a `gamemode` value which points to your gamemode dll path.
 
 ```
 echo Executing Server Config...
@@ -32,6 +36,8 @@ maxplayers 50
 port 7777
 hostname SA-MP 0.3 Server
 gamemode0 empty 1
+gamemode path/to/your/Gamemode.dll
+coreclr path/to/downloaded/dotnet-runtime/
 announce 0
 chatlogging 0
 weburl www.sa-mp.com
@@ -44,6 +50,21 @@ maxnpc 0
 logtimeformat [%H:%M:%S]
 language English
 plugins SampSharp
+```
+
+Dotnet runtime
+----------------
+The dotnet runtime package can be downloaded from the [Microsoft website for windows](https://www.microsoft.com/net/download/thank-you/dotnet-runtime-2.1.1-windows-x86-binaries) or in case of linux there's a unofficial runtime located [here](https://deploy.timpotze.nl/packages/dotnet20180628.zip) ([refs issue #25](https://github.com/SampSharp/docs/issues/25)).
+
+For Windows the value in the server config should look something like:
+```
+corclr path/to/downloaded/dotnet-runtime-2.1.1-win-x86/shared/Microsoft.NETCore.App/2.1.1
+```
+
+for the unofficial linux dotnet runtime:
+
+```
+coreclr path/to/downloaded/dotnet-runtime/
 ```
 
 SampSharp Plugin
