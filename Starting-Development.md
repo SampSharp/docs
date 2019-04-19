@@ -85,7 +85,7 @@ private static void Main(string[] args)
 
 Publishing the project
 ----------------------
-After every change in the newly created project, you need to (build and) publish the project to have your gamemode `.dll` file and the dependencies.
+Before running your game mode for the first time and after adding or updating the dependencies of your project, you need to publish the project to have your gamemode and dependencies  `.dll` files copied to the output directory.
 
 1. Click on `Build > Publish x` (where x is your project name).
 1. Select so it publishes to a folder and provide a path.
