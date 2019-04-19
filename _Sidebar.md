@@ -2,15 +2,16 @@ Getting Started
 ---------------
 - [Introduction](introduction)
 - [Setup](setup)
-- [Starting Development](starting-development) [TODO]
-- [Configuration](configuration) [TODO]
+- [Starting Development](starting-development)
+- [Configuration](configuration)
 <!-- [Upgrade Guide](upgrade-guide) [TODO] -->
 
 Basics
 ------
 - [GameMode Builder](gamemode-builder)
 - [GameMode](gamemode)
-- [Players](players) [TODO]
+- [Players](players)
+- [Timers](timers) [TODO]
 - [NPCs](npcs) [TODO]
 - [Vehicles](vehicles) [TODO]
 - [Actors](actors) [TODO]
@@ -28,7 +29,7 @@ Basics
 Advanced
 --------
 - [Intermissions](intermissions) [TODO]
-- [Interacting with Plugins](interacting-with-plugins)
+- [Interacting with Plugins](interacting-with-plugins) [TODO]
 - [Callbacks](callbacks) (TODO: Move to interacting-with-plugins)
 - [Natives](natives) (TODO: Move to interacting-with-plugins)
 - [Extensions](extensions)
@@ -37,7 +38,7 @@ Advanced
 
 Developer Resources
 -------------------
-- [Building the Plugin](building-the-plugin) [TODO]
+- [Building the Plugin](building-the-plugin)
 - [SampSharp protocol](sampsharp-protocol) [TODO]
 
 Miscellaneous 

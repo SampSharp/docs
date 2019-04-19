@@ -23,10 +23,10 @@ Referencing the Framework
 To be able to interact with the server, you need to add the framework to your
 project's references.
 
-1. In the Solution explorer, right click on References under your project.
+1. In the Solution explorer, right click on `Dependencies`under your project.
 1. Click on `Manage NuGet Packages...`.
-1. Under `Online` select the SampSharp repository.
-1. Click on `Framework for SA-MP#` and click on Install.
+1. Under `Package source` select the SampSharp repository.
+1. Click on any `SampSharp.*` package and click on Install.
 
 Defining the Entry Point
 ------------------------
@@ -82,3 +82,12 @@ private static void Main(string[] args)
         .Run();
 }
 ```
+
+Publishing the project
+----------------------
+After every change in the newly created project, you need to (build and) publish the project to have your gamemode `.dll` file and the dependencies.
+
+1. Click on `Build > Publish x` (where x is your project name).
+1. Select so it publishes to a folder and provide a path.
+1. Click `Publish`
+1. Edit `gamemode` entry in the server config which points to the generated gamemode `.dll` in the provided publish folder.
