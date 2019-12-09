@@ -1,10 +1,9 @@
 Getting Started
 ---------------
 - [Introduction](introduction)
-- [Setup](setup)
-- [Starting Development](starting-development)
-- [Configuration](configuration)
-<!-- [Upgrade Guide](upgrade-guide) [TODO] -->
+- [Getting Started](getting-started)
+- [Running in Production](running-in-production)
+- [Common Problems on Linux](common-problems-on-linux)
 
 Basics
 ------
