@@ -15,7 +15,7 @@ Linux
 -----
 *The following guide is written specifically for Ubuntu, you might need to use some different commands for other linux distributions*
 
-- Install premake4, g++ and mono: ```sudo apt-get install premake4 g++ make mono-complete```
+- Install premake4, g++ and mono: ```sudo apt-get install premake4 g++ make```
 - Change to the directory ```src/SampSharp```
 - Build the makefiles: ```premake4 gmake```
 - Build the plugin: ```make``` (builds in debug mode) -or- ```make config=release32``` (builds in release mode).

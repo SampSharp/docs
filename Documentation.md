@@ -22,4 +22,4 @@ Every page should start with an index with every paragraph on the page. The link
 
 If you need any help, feel free to send an issue.
 
-[documentation website]: http://sampsharp.timpotze.nl/
+[documentation website]: https://sampsharp.net/

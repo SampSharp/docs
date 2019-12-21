@@ -3,11 +3,11 @@ Getting Started
 - [Introduction](introduction)
 - [Getting Started](getting-started)
 - [Running in Production](running-in-production)
+- [Configuration](configuration)
 - [Common Problems on Linux](common-problems-on-linux)
 
 Basics
 ------
-- [GameMode Builder](gamemode-builder)
 - [GameMode](gamemode)
 - [Players](players)
 - [Timers](timers) [TODO]
