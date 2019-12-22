@@ -10,35 +10,33 @@ Basics
 ------
 - [GameMode](gamemode)
 - [Players](players)
-- [Timers](timers) [TODO]
-- [NPCs](npcs) [TODO]
-- [Vehicles](vehicles) [TODO]
-- [Actors](actors) [TODO]
+<!-- [Timers](timers) [TODO] -->
+<!-- [NPCs](npcs) [TODO] -->
+<!-- [Vehicles](vehicles) [TODO] -->
+<!-- [Actors](actors) [TODO] -->
 - [Dialogs](dialogs)
-- [Text Draws](textdraws) [TODO]
-- [Menus](menus) [TODO]
-- [Gang Zones](gangzones) [TODO]
-- [TextLabels](text-labels) [TODO]
-- [Objects](objects) [TODO]
+<!-- [Text Draws](textdraws) [TODO] -->
+<!-- [Menus](menus) [TODO] -->
+<!-- [Gang Zones](gangzones) [TODO] -->
+<!-- [TextLabels](text-labels) [TODO] -->
+<!-- [Objects](objects) [TODO] -->
 - [Player-Commands](player-commands)
 - [Accessing server.cfg](accessing-server.cfg)
 - [Controllers](controllers)
-- [Services](services) [TODO]
+<!-- [Services](services) [TODO] -->
 
 Advanced
 --------
-- [Intermissions](intermissions) [TODO]
-- [Interacting with Plugins](interacting-with-plugins) [TODO]
-- [Callbacks](callbacks) (TODO: Move to interacting-with-plugins)
-- [Natives](natives) (TODO: Move to interacting-with-plugins)
-- [Extensions](extensions)
-- [Pooling](pooling) [TODO]
-- [Threading](threading) [TODO]
+
+- [Threading](threading)
+<!-- [Interacting with Plugins](interacting-with-plugins) [TODO] -->
+- [Callbacks](callbacks)<!-- (TODO: Move to interacting-with-plugins) -->
+- [Natives](natives)<!-- (TODO: Move to interacting-with-plugins) -->
+<!-- [Extensions](extensions) -->
 
 Developer Resources
 -------------------
 - [Building the Plugin](building-the-plugin)
-- [SampSharp protocol](sampsharp-protocol) [TODO]
 
 Miscellaneous 
 -------------
