@@ -31,7 +31,7 @@ Prerequisites (Linux)
 ---------------------
 Microsoft has not yet officially released 32-bit binaries of .NET Core for
 Linux. A pre-build a version of the 32-bit .NET Core Run for Linux which can 
-[be downloaded from this website](https://deploy.timpotze.nl/packages/dotnet20180628.zip).
+[be downloaded from this website](https://deploy.timpotze.nl/packages/dotnet20200127.zip).
 
 [Talk about releasing an official buid is ongoing on GitHub](https://github.com/dotnet/coreclr/issues/9265)
 
