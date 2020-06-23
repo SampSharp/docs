@@ -5,6 +5,7 @@ No usable version of the libssl was found
 ---
 - *Error*: No usable version of the libssl was found
 - *Solution*: Install the 32-bit version of libssl: (ubuntu) `sudo apt-get install libssl1.0.0:i386`
+- *Solution 2*: Install the 32-bit newer version of libssl: (ubuntu) `sudo apt-get install libssl1.1:i361`
 
 FailFast: Couldn't find a valid ICU package installed on the system
 ---
