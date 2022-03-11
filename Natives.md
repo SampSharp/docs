@@ -59,7 +59,7 @@ Existence Check
 To check if a native exists, simply call `NativeLoader.Exists` with the name of the native. This can for example be used to check if a certain plugin is loaded.
 
 ``` c#
-if(!NativeLoader.Exists("Streamer_Update"))
+if(!new NativeLoader(BaseMode.Instance.Client).Exists("Streamer_Update"))
 {
     Console.WriteLine("Streamer was not loaded!");
 }
