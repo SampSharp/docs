@@ -15,7 +15,7 @@ Basics
 <!-- [Vehicles](vehicles) [TODO] -->
 <!-- [Actors](actors) [TODO] -->
 - [Dialogs](dialogs)
-[Text Draws](textdraws)
+- [TextDraws](textdraws)
 <!-- [Menus](menus) [TODO] -->
 <!-- [Gang Zones](gangzones) [TODO] -->
 <!-- [TextLabels](text-labels) [TODO] -->
