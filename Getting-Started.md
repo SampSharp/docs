@@ -63,22 +63,6 @@ output should look as follows:
 [SampSharp:INFO] Pipe created.
 ```
 
-Adding the Nuget repository
----------------------------
-SampSharp currently hosts its packages in its NuGet repository. You'll need to
-add this repository to Visual Studio in order to be able to install the
-SampSharp NuGet packages. 
-
-- Firstly, open Visual Studio
-- If you're seeing the welcoming screen, select "Continue without code".
-- Next, from the top menu open `Tools -> Options....`
-- Select `NuGet Package Manager -> Package Sources` in the left-hand side menu
-- Click on the +-symbol in the top-right corner to add a new repository
-- Enter `SampSharp` as the name of the repository
-- Enter `http://nuget.timpotze.nl/api/v2/`  as the source of the repository and
-click on OK
-- You'll now be able to install SampSharp NuGet packages into your project.
-
 Creating a Game Mode Project
 ----------------------------
 Using the [SampSharp Templates for Visual Studio][templates] it should be a
