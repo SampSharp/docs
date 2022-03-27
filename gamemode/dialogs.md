@@ -1,3 +1,7 @@
+---
+title: Dialogs
+---
+
 - [Introduction](#introduction)
 - [Displaying a dialog](#displaying-a-dialog)
 - [Working with responses](#working-with-responses)
