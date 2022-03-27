@@ -1,39 +1,67 @@
-SampSharp was written by [Tim Potze] in order to
-allow you to write game modes using C#. Although SampSharp also allows you to
-write game modes using any other .NET language, such as Visual Basic and F#,
-only C# is officially supported. The focus of SampSharp is to allow you to
-write game modes fully in an [Object Oriented manner
-][Object-Oriented Programming] without having to worry about SA-MP's native
-identifiers. The use of C# also provides other benefits, such as better
-performance and the availability of [thousands of NuGet packages][NuGet].
+SampSharp is a framework for writing game modes for SA-MP using C# using the .NET (core) runtime. This means you can make use of everything [.NET](https://dot.net) has to offer, including [thousands of NuGet packages](https://nuget.org).
 
-SampSharp runs in a separate process, which allows you to run your game mode on
-any platform, using any runtime. The SampSharp plugin for the  SA-MP server
-communicates with the SampSharp server (the process in which your game mode is
-running) using SampSharp's own protocol. If you're interested in this protocol,
-you can find its documentation of the [SampSharp protocol](sampsharp-protocol)
-page.
+SampSharp consists of a few parts:
+- A plugin which hosts the .NET Runtime and provides the an API interface which SampSharp's .NET libraries consumes
+- SampSharp.Core: A .NET library which provides a clean .NET API for using SA-MP native functions and hooking into SA-MP callbacks 
+- Two variants of frameworks for writing a game mode with .NET: SampSharp.GameMode and SampSharp.Entities
 
-SampSharp has mapped all SA-MP natives and callbacks into Object-Oriented
-classes. This means you no longer need to bother about IDs of players or
-vehicles. All callbacks are available as event within your game mode class and
-the classes related to the event.
+See [Getting Started](getting-started) for information about how to start developing your first SampSharp game mode.
+
+## Frameworks
+SampSharp provides two frameworks for developing game modes. Though you can make any game mode you want with either framework, they differ vastly and how you structure you code and how you will interact with the different entities within SA-MP.
+
+### SampSharp.GameMode
+SampSharp.GameMode is the most mature framework we provide. This framework is the easiest to get started with for beginners. It provides classes and types for every entity or resource SA-MP has to offer. For every entity created in SA-MP an instance is created of the related object-oriented type. For example, when a player connects to the server, an instance of `Player` is created. If you want to send a message to that player, you can simple call `player.SendClientMessage("Your message here");`.
+
+On GitHub you can find [a port of the Grandlarc game mode using SampSharp.GameMode](https://github.com/SampSharp/sample-gm-grandlarc/tree/main/src/Grandlarc).
 
 ``` cs
-void Example(GameMode gameMode, Player player)
+public class GameMode : BaseMode
 {
-    // Listen to PlayerText events for all players:
-    gameMode.PlayerText += (sender, e) => {
-        Console.WriteLine($"Player {sender} says: {e.Text}");
-    };
+    protected override void OnInitialized(EventArgs e)
+    {
+        Console.WriteLine(" Blank game mode by your name here");
+        SetGameModeText("Blank game mode");
+        
+        base.OnInitialized(e);
+    }
+    
+    [Command("hello")]
+    public static void HelloCommand(Player player)
+    {
+        player.SendClientMessage($"Hello, {player.Name}!");
+    }
+}
 
-    // Listen to PlayerText events for a specific player:
-    player.Text += (sender, e) => {
-        Console.WriteLine($"Player {player} says: {e.Text}");
-    };
+[PooledType]
+public class Player : BasePlayer
+{
+    // you can add your own properties and methods here.
 }
 ```
 
-[Tim Potze]: https://github.com/ikkentim
-[Object-Oriented Programming]: https://en.wikipedia.org/wiki/Object-oriented_programming
-[NuGet]: https://www.nuget.org/
+### SampSharp.Entities
+SampSharp.Entities is a relatively new framework. It provides an ["entity component system"-pattern](https://en.wikipedia.org/wiki/Entity_component_system) for writing SA-MP gamemodes. Every entity (player, vehicle, object, textdraw, etc.) created in SA-MP will create an entity with one or more components to define the behavior of the entity. For example, a player entity will have a `Player` component. You will be able to add or remove different components to/from the player to indicate the behaviour of the player. For example, you can apply a custom `Citizen` component to specify the respawning behaviour of the player.
+
+Within systems you can capture various events from SA-MP, capture your own events or handle player commands. SampSharp.Entities provides dependency injection for all event and command handlers, as can be seen in the example below.
+
+On GitHub you can find [a port of the Grandlarc game mode using SampSharp.Entities](https://github.com/SampSharp/sample-ecs-grandlarc/tree/main/src/Grandlarc).
+
+```cs
+public class MyFirstSystem : ISystem
+{
+    [Event]
+    public void OnGameModeInit(IServerService serverService)
+    {
+        Console.WriteLine(" Blank game mode by your name here");
+        serverService.AddPlayerClass(8, new Vector3(0, 0, 7), 0);
+        serverService.SetGameModeText("Blank game mode");
+    }
+
+    [PlayerCommand("hello")]
+    public void HelloCommand(Player player)
+    {
+        player.SendClientMessage($"Hello, {player.Name}!");
+    }
+}
+```
