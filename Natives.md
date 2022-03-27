@@ -1,69 +1,44 @@
 Introduction
 ------------
-The framework has plenty of options to interact with native functions. Natives can either be called via static delegate fields (which is much the easiest way of doing it) or via a `NativeLoader.Load`/`INative.Invoke` call.
+Though SampSharp provides access to nearly all available SA-MP natives through various wrapper types, there are still situations where you might want to call a native which SampSharp does not provide a wrapper for. In these cases you can write your own wrapper for the native function. Writing wrappers is trivial, all you need to do is create a class which contains the signatures of the natives you want to write the wrapper for.
 
-**Notice!** Most of the natives provided by SA-MP are available via the classes available within the framework. Some natives (mostly the math related ones) are not implemented because it is much easier to use the comparable methods provided by the .NET framework. If you still come across a not implemented native, [send an issue](https://github.com/ikkentim/SampSharp/issues).
+If you come across a SA-MP native which is not available in SampSharp, please [raise an issue in the SampSharp repository](https://github.com/ikkentim/SampSharp/issues) so we can take a look at it. Please note we don't provide wrappers for natives which provide functionality which can be performed within .NET, such as string or time operations.
 
-Static delegate fields
-------------
+The following example provides a wrapper for the `SendClientMessageToAll` native function. Please note the natives used in this article are just examples. All SA-MP natives used in this article are already available through SampSharp.
+
+``` c#
+public class MyCustomNatives
+{
+    [NativeMethod]
+    public virtual int SendClientMessageToAll(int color, string message) => throw new NativeNotImplementedException();
+}
+
+// In order to use the native you'll need to create an instance of the wrapper:
+var instance = NativeObjectProxyFactory.CreateInstance<MyCustomNatives>();
+
+instance.SendClientMessageToAll(-1, "Hello, world!");
+```
+
+Proxy creation
+--------------
+When you call `NativeObjectProxyFactory.CreateInstance`, SampSharp compiles a proxy type at runtime and creates an instance of it. Subsequent calls with the same type will re-use the previously compiled type. The proxy type will override all __`virtual`__ methods decorated with the `NativeMethod` attribute. If the native function could not be found in the SA-MP server, the function is not overridden. This means that the base implementation will be called instead. Generally you want to throw a `NativeNotImplementedException` in the base implementation so you will know when the native function failed to be called. SampSharp also provides a simple base class you can use for your native signature types which provides a singleton instance for your proxy.
+
 ``` c#
 public class MyCustomNatives : NativeObjectSingleton<MyCustomNatives>
 {
     [NativeMethod]
-    public virtual int SendClientMessageToAll(int color, string message)
-    {
-        throw new NativeNotImplementedException();
-    }
+    public virtual int SendClientMessageToAll(int color, string message) => throw new NativeNotImplementedException();
 }
 
-public class SomeClass
-{
-    public static void SendClientMessageToAll()
-    {
-        MyCustomNatives.Instance.SendClientMessageToAll(-1, "An exemplary message.");
-    }
-}
+// An instance of the proxy is available through a static property in the type
+MyCustomNatives.Instance.SendClientMessageToAll(-1, "Hello, world!");
 ```
 
-Loading a Native
+Native Signature
 ----------------
-You can load a native by calling `NativeLoader.Load` and specifying the name and parameter types of the function. If the native exists `NativeLoader.Load` returns an instance of type `INative`, otherwise null is returned. A native can be invoked by calling `INative.Invoke`. As parameters you can specify an array of arguments. Because the `args` parameter is marked with the `params` keyword, you can simply input multiple arguments, as shown in the `SendClientMessageToAll` below.
+A number of attributes and properties are available to make it completely clear what SampSharp should expect from a native function and how SampSharp should create the proxy method. By default, SampSharp assumes the native function's name is the same as the method name which declares the native. If this is not the true, you can explicitly specify the name of the native function using the `Function` property of the `NativeMethod` attribute.
 
 ``` c#
-// native SendClientMessageToAll(color, const message[]);
-INative native = new NativeLoader(BaseMode.Instance.Client).Load("SendClientMessageToAll", null, new Type[] { typeof(int), typeof(string) });
-var args = new object[] {0xffffffff, "An exemplary message."};
-native.Invoke(args);
-```
-
-If an argument if of a output type, you can simply pass null in the arguments array. The value will be set after the `INative.Invoke` is called.
-
-``` c#
-// native GetPlayerName(playerid, const name[], len);
-INative native = new NativeLoader(BaseMode.Instance.Client).Load("GetPlayerName", null, new Type[] { typeof(int), typeof(string).MakeByRefType(), typeof(int) });
-var args = new object[] {0, null, 32};
-native.Invoke(args);
-string name = args[1] as string;
-
-Console.WriteLine("Name: {0}", name);
-```
-
-Existence Check
----------------
-To check if a native exists, simply call `NativeLoader.Exists` with the name of the native. This can for example be used to check if a certain plugin is loaded.
-
-``` c#
-if(!new NativeLoader(BaseMode.Instance.Client).Exists("Streamer_Update"))
-{
-    Console.WriteLine("Streamer was not loaded!");
-}
-```
-
-Length Specifiers
------------------
-If a native has an output argument of type `string`, `int[]`, `float[]` or `bool[]` or an input argument of type `int[]`, `float[]` or `bool[]` the framework needs to know at which parameter index the length of the argument is specified. If you don't specify these indices, the framework will assume the size is specified in the next parameter.
-
-``` c#
-// native SomeNative(indices[], Float:points[], indicesCount, pointsCount);
-INative native = new NativeLoader(BaseMode.Instance.Client).Load("SomeNative", new[] {2, 3}, new Type[] { typeof(int[]), typeof(float[]), typeof(int) });
+[NativeMethod(Function = "SendClientMessageToAll")]
+public virtual int MyMethod(int color, string message) => throw new NativeNotImplementedException();
 ```
