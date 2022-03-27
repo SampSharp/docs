@@ -1,10 +1,3 @@
-- [Introduction](#introduction)
-- [Prerequisites (Windows)](#prerequisites-windows)
-- [Prerequisites (Linux)](#prerequisites-linux)
-- [Installing the SampSharp Plugin](#installing-the-sampsharp-plugin)
-- [Configuring SampSharp](#configuring-sampsharp)
-- [Publishing your Game Mode](#publishing-your-game-mode)
-
 Introduction
 ------------
 In development mode, SampSharp runs in a separate process from the samp-server,

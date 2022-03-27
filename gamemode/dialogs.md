@@ -2,11 +2,6 @@
 title: Dialogs
 ---
 
-- [Introduction](#introduction)
-- [Displaying a dialog](#displaying-a-dialog)
-- [Working with responses](#working-with-responses)
-- [Tab List Dialogs](#tab-list-dialogs)
-
 Introduction
 ------------
 SampSharp supports all of the dialog styles from SA:MP, implemented in an object-oriented manner. 

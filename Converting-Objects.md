@@ -1,5 +1,3 @@
-- [Converting Incongnito's Streamer Objects](#converting-incongnitos-streamer-objects)
-
 Converting Incongnito's Streamer Objects
 ----------------------------------------
 

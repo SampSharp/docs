@@ -1,11 +1,3 @@
-- [Introduction](#introduction)
-- [Creating a textdraw](#creating-a-textdraw)
-- [Displaying a textdraw](#displaying-a-textdraw)
-- [Fonts](#fonts)
-- [Drawing sprite](#drawing-sprite)
-- [Drawing model](#drawing-model)
-- [Clickable Textdraws](#clickable-textdraws)
-
 Introduction
 ------------
 SampSharp supports both SA:MP textdraws type: global textdraws and player textdraws.

@@ -1,8 +1,3 @@
-- [Introduction](#introduction)
-- [Subclassing](#subclassing)
-- [Suggestions for ORM](#suggestions-for-orm)
-- [Entity Framework Core - Code First](#entity-framework-core-code-first)
-
 Introduction
 ------------
 The `BasePlayer` class represents a SA-MP player. This class contains the

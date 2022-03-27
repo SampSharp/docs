@@ -1,9 +1,3 @@
-- [Introduction](#introduction)
-- [Static delegate fields](#static-delegate-fields)
-- [Loading a Native](#loading-a-native)
-- [Existence Check](#existence-check)
-- [Length Specifiers](#length-specifiers)
-
 Introduction
 ------------
 The framework has plenty of options to interact with native functions. Natives can either be called via static delegate fields (which is much the easiest way of doing it) or via a `NativeLoader.Load`/`INative.Invoke` call.

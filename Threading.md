@@ -1,8 +1,3 @@
-- [Introduction](#introduction)
-- [Callbacks](#callbacks)
-- [Synchronization Context](synchronization-context)
-- [Calling Natives from Other Threads](#calling-natives-from-other-threads)
-
 Introduction
 ----
 SampSharp allows you to use [asynchronous programming](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/) using C#s async-await. SA-MP only allows calls to natives on the main thread. SampSharp will make sure that all calls are sent on the main thread. If a call to a SA-MP native is made on a different thread, SampSharp will wait for the next SA-MP server tick and call the native from that tick. There are a few concepts you need to know about before you start depending heavily on asynchronous programming.

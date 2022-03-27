@@ -1,10 +1,3 @@
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Installing the SampSharp Plugin](#installing-the-sampsharp-plugin)
-- [Adding the Nuget repository](#adding-the-nuget-repository)
-- [Creating a Game Mode Project](#creating-a-game-mode-project)
-- [Starting and Stopping your Game Mode](#starting-and-stopping-your-game-mode)
-
 Introduction
 ------------
 This guide will get you started building and running your first SampSharp game

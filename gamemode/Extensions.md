@@ -1,8 +1,3 @@
-- [Introduction](#introduction)
-- [Entry Point](#entry-point)
-- [Registration](#registration)
-- [Callbacks](#callbacks)
-
 Introduction
 ------------
 Extensions are libraries (separate from game modes) which provide additional functionality to the framework, for example, by wrapping around the natives and callbacks of a plugin.

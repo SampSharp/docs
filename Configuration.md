@@ -1,14 +1,3 @@
-- [Introduction](#introduction)
-- [Game Mode Instance](game-mode-instance)
-- [SampSharp Logging](#sampsharp-logging)
-- [Redirect Console Output](#redirect-console-output)
-- [Start Behaviour](#start-behaviour)
-- [Encoding](#encoding)
-- [Multi-Process Run Mode](multi-process-run-mode)
-- [Hosted Run Mode](#hosted-run-mode)
-- [GameModeBuilder](#gamemodebuilder)
-
-
 Introduction
 --------
 There are a few options in SampSharp which allows you to configure certain behaviour of how the server is run. By default SampSharp runs the server with some sane default settings. You can however change these settings if the defaults are causing problems for you.

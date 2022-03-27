@@ -1,18 +1,3 @@
-- [Introduction](#introduction)
-- [Decorating Methods](#decorating-methods)
-- [Naming](#naming)
-- [Parameters](#parameters)
-- [Custom Parameter Types](#custom-parameter-types)
-- [Return Values](#return-values)
-- [Grouping Commands](#grouping-commands)
-- [Permissions](#permissions)
-- [Default Values](#default-values)
-- [Overloading Commands](#overloading-commands)
-- [Ignore Case](#ignore-case)
-- [Usage Message](#usage-message)
-- [Overriding Default Behavior](#overriding-default-behavior)
-- [Custom Command Class](#custom-command-class)
-
 Introduction
 ------------
 SampSharp provides an easy-to-use commands system. A command can be created by registering a class to the `CommandManager` service or by decorating a method with the `Command` attribute.
