@@ -9,7 +9,10 @@ The following example provides a wrapper for the `SendClientMessageToAll` native
 public class MyCustomNatives
 {
     [NativeMethod]
-    public virtual int SendClientMessageToAll(int color, string message) => throw new NativeNotImplementedException();
+    public virtual int SendClientMessageToAll(int color, string message)
+    {
+        throw new NativeNotImplementedException();
+    }
 }
 
 // In order to use the native you'll need to create an instance of the wrapper:
@@ -25,7 +28,10 @@ When you call `NativeObjectProxyFactory.CreateInstance`, SampSharp compiles a pr
 public class MyCustomNatives : NativeObjectSingleton<MyCustomNatives>
 {
     [NativeMethod]
-    public virtual int SendClientMessageToAll(int color, string message) => throw new NativeNotImplementedException();
+    public virtual int SendClientMessageToAll(int color, string message)
+    {
+        throw new NativeNotImplementedException();
+    }
 }
 
 // An instance of the proxy is available through a static property in the type
@@ -37,7 +43,10 @@ A number of attributes and properties are available to make it completely clear 
 
 ``` c#
 [NativeMethod(Function = "SendClientMessageToAll")]
-public virtual int MyMethod(int color, string message) => throw new NativeNotImplementedException();
+public virtual int MyMethod(int color, string message)
+{
+    throw new NativeNotImplementedException();
+}
 ```
 
 ### Variable arguments
@@ -53,14 +62,20 @@ The [`params` keyword](https://docs.microsoft.com/en-us/dotnet/csharp/language-r
 
 ``` c#
 [NativeMethod]
-public virtual int CallRemoteFunction(string function, string format, params object[] args) => throw new NativeNotImplementedException();
+public virtual int CallRemoteFunction(string function, string format, params object[] args)
+{
+    throw new NativeNotImplementedException();
+}
 ```
 
 The second option is to explicitly specify the parameter types. This is generally less useful, but there might be situations where this is more fitting. Please note you have to mark the indices of the parameters as "by reference" because variable arguments in pawn are internally passed as references.
 
 ``` c#
 [NativeMethod(ReferenceIndices = new int[] { 2, 3 })]
-public virtual int CallRemoteFunction(string function, string format, int arg1, int 2) => throw new NativeNotImplementedException();
+public virtual int CallRemoteFunction(string function, string format, int arg1, int 2)
+{
+    throw new NativeNotImplementedException();
+}
 ```
 
 ### Properties
@@ -87,10 +102,16 @@ native ExampleNative(const worlds[] = { -1 }, const interiors[] = { -1 }, const 
 
 ``` c#
 [NativeMethod]
-public virtual int GetPlayerName(int playerid, out string name, int length) => throw new NativeNotImplementedException();
+public virtual int GetPlayerName(int playerid, out string name, int length)
+{
+    throw new NativeNotImplementedException();
+}
 
 [NativeMethod]
-public virtual int ExampleNative(int[] worlds, int[] interiors, int[] players, int maxworlds, int maxinteriors, int maxplayers) => throw new NativeNotImplementedException();
+public virtual int ExampleNative(int[] worlds, int[] interiors, int[] players, int maxworlds, int maxinteriors, int maxplayers)
+{
+    throw new NativeNotImplementedException();
+}
 ```
 
 When SampSharp's assumptions aren't correct, you can manually specify the indices of the length parameters using the `lengths` argument of the `NativeMethod` attribute.  
@@ -102,7 +123,10 @@ native CreateDynamicPolygon(const Float:points[], Float:minz, Float:maxz, maxpoi
 
 ``` c#
 [NativeMethod(3)]
-public virtual int CreateDynamicPolygon(float[] points, float minz, float maxz, int maxpoints, int worldid, int interiorid, int playerid, int priority) => throw new NativeNotImplementedException();
+public virtual int CreateDynamicPolygon(float[] points, float minz, float maxz, int maxpoints, int worldid, int interiorid, int playerid, int priority)
+{
+    throw new NativeNotImplementedException();
+}
 ```
 
 ## Identifiers
@@ -119,10 +143,16 @@ public class Player
     public int Id { get; }
 
     [NativeProperty]
-    public virtual int PlayerMoney => throw new NativeNotImplementedException();
+    public virtual int PlayerMoney 
+    {
+        get => throw new NativeNotImplementedException();
+    }
     
     [NativeMethod]
-    public virtual void SendClientMessage(int color, string message) => throw new NativeNotImplementedException();
+    public virtual void SendClientMessage(int color, string message)
+    {
+        throw new NativeNotImplementedException();
+    }
 }
 ```
 
@@ -142,7 +172,10 @@ public class TextDraw
     // (...)
 
     [NativeMethod(Function = "TextDrawShowForPlayer", IdentifiersIndex = 1)]
-    public virtual void ShowForPlayer(int playerId) => throw new NativeNotImplementedException();
+    public virtual void ShowForPlayer(int playerId)
+    {
+        throw new NativeNotImplementedException();
+    }
 
     // signature: native TextDrawShowForPlayer(playerid, Text:text);
 }
@@ -163,7 +196,9 @@ public class Player
     }
 
     [NativeMethod(ignoreIdentifiers: true)]
-    public virtual void SendClientMessageToAll(int color, string message) =>
+    public virtual void SendClientMessageToAll(int color, string message)
+    {
         throw new NativeNotImplementedException();
+    }
 }
 ```
