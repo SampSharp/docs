@@ -1,3 +1,7 @@
+---
+title: Introduction
+---
+
 SampSharp is a framework for writing game modes for SA-MP using C# and the .NET runtime. This means you can make use of everything [.NET](https://dot.net) has to offer, including [thousands of NuGet packages](https://nuget.org).
 
 SampSharp consists of a few parts:
