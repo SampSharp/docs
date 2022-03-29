@@ -11,12 +11,12 @@ Core
 
 GameMode Framwork
 -----------------
-- [GameMode](/gamemode/gamemode)
-- [Players](/gamemode/players)
-- [Dialogs](/gamemode/dialogs)
-- [TextDraws](/gamemode/textdraws)
-- [Player-Commands](/gamemode/player-commands)
-- [Accessing server.cfg](/gamemode/accessing-server.cfg)
-- [Controllers](/gamemode/controllers)
-- [Callbacks](/gamemode/callbacks)
-- [Extensions](/gamemode/extensions)
+- [GameMode](gamemode-gamemode)
+- [Players](gamemode-players)
+- [Dialogs](gamemode-dialogs)
+- [TextDraws](gamemode-textdraws)
+- [Player-Commands](gamemode-player-commands)
+- [Accessing server.cfg](gamemode-accessing-server.cfg)
+- [Controllers](gamemode-controllers)
+- [Callbacks](gamemode-callbacks)
+- [Extensions](gamemode-extensions)

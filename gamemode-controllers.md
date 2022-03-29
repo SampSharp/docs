@@ -6,8 +6,8 @@ Creating Controllers
 --------------------
 To create a controller, create a class which implements `IController`. There are some additional interfaces which can be implemented to add functionality to the controller:
 
-- If the controller needs to register a type to the [pooling system](pools), it must implement the `ITypeProvider` interface.
-- If the controller needs to register [services](services) to the game mode, it must  implement the `IGameServiceProvider` interface.
+- If the controller needs to register a type to the pooling system, it must implement the `ITypeProvider` interface.
+- If the controller needs to register services to the game mode, it must  implement the `IGameServiceProvider` interface.
 - If the controller needs to listen to events in the game mode, it must implement the `IEventListener` interface.
 
 ``` c#
