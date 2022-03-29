@@ -1,8 +1,3 @@
-- [Introduction](#introduction)
-- [Subclassing](#subclassing)
-- [Suggestions for ORM](#suggestions-for-orm)
-- [Entity Framework Core - Code First](#entity-framework-core-code-first)
-
 Introduction
 ------------
 The `BasePlayer` class represents a SA-MP player. This class contains the
@@ -25,17 +20,12 @@ public class GameMode : BaseMode
 
 Subclassing
 -----------
-In order to allow you to store additional data for the player, SampSharp allows
-you to create a subclass of the `BasePlayer` class. In your subclass you can
-create properties, fields and methods for storing and consuming your data.
-Because you're likely to create a subclass of the player class, SampSharp has
-conveniently called it `BasePlayer` instead of `Player` to avoid confusion in
-your code.
+In order to allow you to store additional data for the player, SampSharp allows you to create a subclass of the `BasePlayer` class. In your subclass you can create properties, fields and methods for storing and consuming your data. Because you're likely to create a subclass of the player class, SampSharp has conveniently called it `BasePlayer` instead of `Player` to avoid confusion in your code.
 
 ``` cs
 public class Player : BasePlayer
 {
-    private bool IsCop { get; set; }
+    public bool IsCop { get; set; }
     // ...
 }
 ```

@@ -1,6 +1,3 @@
-- [Introduction](#introduction)
-- [Initialization](#initialization)
-
 Introduction
 ------------
 Your game mode class is your main SampSharp class. Every SA-MP callback is

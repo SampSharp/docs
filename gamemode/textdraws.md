@@ -1,11 +1,3 @@
-- [Introduction](#introduction)
-- [Creating a textdraw](#creating-a-textdraw)
-- [Displaying a textdraw](#displaying-a-textdraw)
-- [Fonts](#fonts)
-- [Drawing sprite](#drawing-sprite)
-- [Drawing model](#drawing-model)
-- [Clickable Textdraws](#clickable-textdraws)
-
 Introduction
 ------------
 SampSharp supports both SA:MP textdraws type: global textdraws and player textdraws.
@@ -186,9 +178,9 @@ public class Player : BasePlayer
 ```
 
 Once the client is in select mode, the following events will be enabled:
-* ClickTextDraw
-* ClickPlayerTextDraw
-* CancelClickTextDraw (called when the player press ESC key)
+* `ClickTextDraw`
+* `ClickPlayerTextDraw`
+* `CancelClickTextDraw` (called when the player press ESC key)
 
 ``` c#
 public class Player : BasePlayer

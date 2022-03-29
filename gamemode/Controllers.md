@@ -1,8 +1,3 @@
-- [Introduction](#introduction)
-- [Creating Controllers](#creating-controllers)
-- [Loading Controllers](#loading-controllers)
-- [Overloading Controllers](#overloading-controllers)
-
 Introduction
 ------------
 Controllers distribute events between instances and manage the living instances. For example, if the `BaseMode.PlayerEnteredVehicle` event is called, the `BasePlayerController` will trigger the `BasePlayer.EnteredVehicle` event. If a player disconnected, the `BasePlayerController` will destroy the instance of the disconnected player.

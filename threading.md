@@ -1,7 +1,6 @@
-- [Introduction](#introduction)
-- [Callbacks](#callbacks)
-- [Synchronization Context](synchronization-context)
-- [Calling Natives from Other Threads](#calling-natives-from-other-threads)
+---
+title: Threading
+---
 
 Introduction
 ----
@@ -9,7 +8,7 @@ SampSharp allows you to use [asynchronous programming](https://docs.microsoft.co
 
 Callbacks
 ---
-All callbacks (events) are called on the main thread. Like for  game modes written in Pawn, this means that the SA-MP server will wait for the callback handing to be completed before the server continues handing other events. 
+All callbacks (events) are called on the main thread. Like for game modes written in Pawn, this means that the SA-MP server will wait for the callback handing to be completed before the server continues handing other events. 
 
 Some callbacks can handle return values, like `OnRconCommand` of which the return value can be set through the `rconEventArgs.Success` property. When you asynchronously await an operation, the execution of the callbacks will continue and the default return value will be returned from the callback because the main thread will not wait for asynchronous operations to complete..
 

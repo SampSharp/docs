@@ -1,18 +1,3 @@
-- [Introduction](#introduction)
-- [Decorating Methods](#decorating-methods)
-- [Naming](#naming)
-- [Parameters](#parameters)
-- [Custom Parameter Types](#custom-parameter-types)
-- [Return Values](#return-values)
-- [Grouping Commands](#grouping-commands)
-- [Permissions](#permissions)
-- [Default Values](#default-values)
-- [Overloading Commands](#overloading-commands)
-- [Ignore Case](#ignore-case)
-- [Usage Message](#usage-message)
-- [Overriding Default Behavior](#overriding-default-behavior)
-- [Custom Command Class](#custom-command-class)
-
 Introduction
 ------------
 SampSharp provides an easy-to-use commands system. A command can be created by registering a class to the `CommandManager` service or by decorating a method with the `Command` attribute.
@@ -163,8 +148,6 @@ It is also possible to write your own parsers.
 ``` c#
 class CustomType : ICommandParameterType
 {
-    #region Implementation of ICommandParameterType
-
     /// <summary>
     ///     Gets the value for the occurance of this parameter type at the start of the commandText. The processed text will be
     ///     removed from the commandText.
@@ -206,8 +189,6 @@ class CustomType : ICommandParameterType
 
         return false;
     }
-
-    #endregion
 }
 
 class AnyClass
@@ -320,8 +301,6 @@ Permission checks can also be manually written.
 ``` c#
 public class RichPermissionChecker : IPermissionChecker
 {
-    #region Implementation of IPermissionChecker
-
     /// <summary>
     ///     Gets the message displayed when the player is denied permission.
     /// </summary>
@@ -339,7 +318,6 @@ public class RichPermissionChecker : IPermissionChecker
     {
         return player.Money > 1000;
     }
-    #endregion
 }
 
 class AnyClass
@@ -464,16 +442,12 @@ public class MyCommandManager : CommandsManager
     {
     }
 
-    #region Overrides of CommandsManager
-
     protected override ICommand CreateCommand(CommandPath[] commandPaths, string displayName, bool ignoreCase,
         IPermissionChecker[] permissionCheckers, MethodInfo method, string usageMessage)
     {
         // Create an instance of your own command type.
         return new MyCommand(commandPaths, displayName, ignoreCase, permissionCheckers, method, usageMessage);
     }
-
-    #endregion
 }
 
 public class MyCommand : DefaultCommand
@@ -483,8 +457,6 @@ public class MyCommand : DefaultCommand
         : base(names, displayName, ignoreCase, permissionCheckers, method, usageMessage)
     {
     }
-
-    #region Overrides of DefaultCommand
 
     protected override ICommandParameterType GetParameterType(ParameterInfo parameter, int index, int count)
     {
@@ -522,15 +494,11 @@ public class MyCommand : DefaultCommand
         player.SendClientMessage(Color.Red, permissionChecker.Message);
         return true;
     }
-        
-    #endregion
 }
 
 [Controller]
 public class MyCommandController : CommandController
 {
-    #region Overrides of CommandController
-
     public override void RegisterServices(BaseMode gameMode, GameModeServiceContainer serviceContainer)
     {
         // Register our own commands manager service instead of the default.
@@ -540,8 +508,6 @@ public class MyCommandController : CommandController
         // Register commands in game mode.
         CommandsManager.RegisterCommands(gameMode.GetType());
     }
-
-    #endregion
 }
 ```
 
@@ -552,8 +518,6 @@ A command can manually be defined by creating a class which implements `ICommand
 ``` c#
 class CustomCommand : ICommand
 {
-    #region Implementation of ICommand
-
     /// <summary>
     ///     Determines whether this instance can be invoked by the specified player.
     /// </summary>
@@ -580,8 +544,6 @@ class CustomCommand : ICommand
         player.SendClientMessage("You are an admin!");
         return true;
     }
-
-    #endregion
 }
 
 class GameMode : BaseMode

@@ -1,7 +1,6 @@
-- [Introduction](#introduction)
-- [Displaying a dialog](#displaying-a-dialog)
-- [Working with responses](#working-with-responses)
-- [Tab List Dialogs](#tab-list-dialogs)
+---
+title: Dialogs
+---
 
 Introduction
 ------------

@@ -1,7 +1,3 @@
-- [Introduction](#introduction)
-- [Handling Calls](#handling-calls)
-- [Handling Parameters](#handling-parameters)
-
 Introduction
 ------------
 SampSharp provides an easy-to-use system for catching callbacks. When a callback is called, SampSharp automatically checks for a method with the same name within the game mode and every loaded extension.
@@ -15,6 +11,7 @@ To handle calls to callbacks, you simply add a method with the same name within 
 ``` c#
 class GameMode : BaseMode
 {
+    [Callback]
     internal bool ACustomCallback()
     {
         // Handle the call
@@ -30,6 +27,7 @@ Parameters can simply be specified within the signature of the callback method. 
 ``` c#
 class GameMode : BaseMode
 {
+    [Callback]
     internal void ACustomCallback(int parameterA, bool parameterB)
     {
         // Handle the call
@@ -37,11 +35,12 @@ class GameMode : BaseMode
 }
 ```
 
-Parameters of an array type *must* specify the 0-based parameter index at which the length of the array is specified. Callbacks which don't specify the size of arrays within a parameter are not supported by the framework.
+Parameters of an array type *must* specify the 0-based parameter index at which the length of the array is specified. Callbacks which don't specify the size of arrays within a parameter are not supported at the moment.
 
 ``` c#
 class GameMode : BaseMode
 {
+    [Callback]
     // The length of `points` is specified in `pointsLength`. The index of `pointsLength` is 1.
     internal void ACustomCallback([ParameterLength(1)]float[] points, int pointsLength)
     {
