@@ -178,9 +178,9 @@ public class Player : BasePlayer
 ```
 
 Once the client is in select mode, the following events will be enabled:
-* ClickTextDraw
-* ClickPlayerTextDraw
-* CancelClickTextDraw (called when the player press ESC key)
+* `ClickTextDraw`
+* `ClickPlayerTextDraw`
+* `CancelClickTextDraw` (called when the player press ESC key)
 
 ``` c#
 public class Player : BasePlayer
