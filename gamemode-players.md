@@ -1,3 +1,7 @@
+---
+title: Players
+---
+
 Introduction
 ------------
 The `BasePlayer` class represents a SA-MP player. This class contains the

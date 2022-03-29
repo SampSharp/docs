@@ -1,3 +1,7 @@
+---
+title: Getting Started
+---
+
 ## Introduction
 This guide will help you to to get your first SA-MP server up and running with your own SampSharp game mode. In this guide we will asume you are using Windows and will be using Visual Studio to develop your game mode.
 

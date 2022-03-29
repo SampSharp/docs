@@ -1,3 +1,7 @@
+---
+title: Callbacks
+---
+
 Introduction
 ------------
 SampSharp provides an easy-to-use system for catching callbacks. When a callback is called, SampSharp automatically checks for a method with the same name within the game mode and every loaded extension.

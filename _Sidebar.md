@@ -1,17 +1,19 @@
+Basics
+------
 - [Introduction](introduction)
 - [Getting Started](getting-started)
-- [Running a Production Server](running-a-production-server)
+- [Running a Server in Production](production)
 - [Troubleshooting](troubleshooting)
-
-Core
-----
 - [GameModeBuilder](game-mode-builder)
+
+Advanced
+----
 - [Natives](natives)
 - [Threading](threading)
 
 GameMode Framwork
 -----------------
-- [GameMode](gamemode-gamemode)
+- [GameMode](gamemode-game-mode)
 - [Players](gamemode-players)
 - [Dialogs](gamemode-dialogs)
 - [TextDraws](gamemode-textdraws)

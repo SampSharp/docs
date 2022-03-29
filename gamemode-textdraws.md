@@ -1,3 +1,7 @@
+---
+title: TextDraws
+---
+
 Introduction
 ------------
 SampSharp supports both SA:MP textdraws type: global textdraws and player textdraws.
