@@ -21,7 +21,7 @@ Installation
 For Windows you can simply download a 32-bit (x86) edition of a recent version of the .NET Runtime. Make sure to download the .NET Runtime binaries, you do not need to download the installer! You can download it from [the .NET Core download page](https://dotnet.microsoft.com/download/dotnet-core).
 
 ### .NET Runtime (Linux)
-Microsoft has not yet officially released 32-bit binaries of .NET Core for Linux. A pre-build a version of the 32-bit .NET Core Run for Linux which can  [be downloaded from this website](https://deploy.timpotze.nl/packages/dotnet20200127.zip).
+Microsoft has not yet officially released 32-bit binaries of .NET Core for Linux. A pre-build a version of the 32-bit .NET Core Run for Linux which can  [be downloaded from this website](https://deploy.timpotze.nl/packages/runtime_603_20220324.tar.gz).
 
 ### Extracting the .NET Runtime
 Extract the .NET Runtime binaries into a `runtime` folder in your samp-server directory. Create a `gamemode` folder in your server directory where you can store the binaries of your compiled game mode.
