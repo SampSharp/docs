@@ -231,7 +231,7 @@ In order to keep commands organized, you can group them. This is an optional fea
 In order to assign a command group to a class, attach a `CommandGroup` attribute to the class.
 
 ``` c#
-[CommandGroup("admin"))]
+[CommandGroup("admin")]
 class AdminCommandsClass
 {
     [Command("spawn")]
@@ -252,7 +252,7 @@ class AdminCommandsClass
 Command groups can also be nested or assigned synonyms.
 
 ``` c#
-[CommandGroup("admin"))]
+[CommandGroup("admin")]
 class AdminCommandsClass
 {
     [CommandGroup("vehicle", "veh")]
@@ -264,7 +264,7 @@ class AdminCommandsClass
             // Command: `/admin vehicle spawn` or `/admin veh spawn`
         }
 
-        [Command("delete"))]
+        [Command("delete")]
         private static void DeleteCommand(BasePlayer sender, int vehicleid)
         {
             // Command: `/admin vehicle delete` or `/admin veh delete`
@@ -355,7 +355,7 @@ class AdminCommandsClass
         // Spawn a car for this admin...
     }
 
-    [Command("restart"))]
+    [Command("restart")]
     private static void RestartCommand(BasePlayer sender)
     {
         // Command: `admin restart`
