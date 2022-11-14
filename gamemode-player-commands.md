@@ -237,7 +237,7 @@ class AdminCommandsClass
     [Command("spawn")]
     private static void SpawnCommand(BasePlayer sender)
     {
-        // Command: `admin spawn`
+        // Command: `/admin spawn`
     }
 
     [Command("restart"))]
