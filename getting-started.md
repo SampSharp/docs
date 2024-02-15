@@ -8,7 +8,7 @@ This guide will help you to to get your first SA-MP server up and running with y
 ## Prerequisites
 Before we get started, you'll need to install the following things:
 - [Visual Studio](https://visualstudio.microsoft.com/downloads/) (2022 or newer, the community edition is free for everyone)
-- [SA-MP Windows Server](https://www.sa-mp.com/download.php) (extract it anywhere you like)
+- [SA-MP Windows Server](https://sa-mp.mp/downloads/) (extract it anywhere you like)
 
 ## Installing the SampSharp plugin
 Using the following instructions you can install the SampSharp plugin and configure it for running your first game mode.
