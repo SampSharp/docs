@@ -11,7 +11,7 @@ Advanced
 - [Natives](natives)
 - [Threading](threading)
 
-GameMode Framwork
+GameMode Framework
 -----------------
 - [GameMode](gamemode-game-mode)
 - [Players](gamemode-players)
