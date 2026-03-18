@@ -1,0 +1,11 @@
+:root {
+  --vp-c-brand: #3c3c3c;
+  --vp-c-brand-dark: #2a2a2a;
+  --vp-c-brand-dimm: rgba(60, 60, 60, 0.08);
+}
+
+html.dark {
+  --vp-c-brand: #4a4a4a;
+  --vp-c-brand-dark: #5a5a5a;
+  --vp-c-brand-dimm: rgba(74, 74, 74, 0.16);
+}
