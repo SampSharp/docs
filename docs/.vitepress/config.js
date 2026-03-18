@@ -4,12 +4,12 @@ export default defineConfig({
   title: "SampSharp",
   description: ".NET SA-MP",
   head: [
-    ['link', { rel: 'icon', href: '/images/sampsharp.png' }],
+    ['link', { rel: 'icon', href: '/sampsharp.png' }],
     ['meta', { name: 'theme-color', content: '#3c3c3c' }]
   ],
   
   themeConfig: {
-    logo: '/images/sampsharp.png',
+    logo: '/sampsharp.png',
     
     nav: [
       { text: 'Documentation', link: '/introduction' },
