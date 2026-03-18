@@ -5,8 +5,8 @@ hero:
   name: ".NET SA-MP"
   text: "Raise your SA-MP game modes to a whole new level with the power of .NET"
   image:
-    src: /images/sampsharp.png
-    alt: SampSharp
+    src: /sampsharp.png
+    alt: SampSharp logo
   actions:
     - theme: brand
       text: Get Started
