@@ -1,45 +1,62 @@
 ---
 title: SampSharp
 _disableContribution: true
-_disableToc: true
 _disableAffix: true
 ---
 
-# SampSharp
+# Welcome to SampSharp
 
-**Raise your SA-MP game modes to a whole new level with the power of .NET**
+Build powerful open.mp game modes with modern C# and a battle-tested Entity Component System architecture.
 
 ---
 
-## Quick Start
+## What is SampSharp?
+
+SampSharp is a framework that lets you write open.mp game modes in **C#** instead of Pawn. Powered by the .NET runtime, it brings modern programming practices, strong typing, and access to the entire NuGet ecosystem to SA-MP/open.mp development. 
+
+The new **SampSharp v1.x** (for open.mp) features an **Entity Component System (ECS)** architecture that makes your code more modular, testable, and maintainable compared to traditional callback-based approaches.
+
+---
+
+## Why Choose SampSharp?
+
+- **🎯 ECS Architecture** — Build scalable systems with clear separation of concerns using the Entity Component System pattern
+- **🔷 Modern C#** — Write type-safe, expressive code with the latest C# language features and LINQ
+- **⚡ High Performance** — .NET's performance and JIT compilation deliver efficient game mode execution
+- **📦 NuGet Ecosystem** — Use thousands of battle-tested libraries for logging, JSON, async operations, and more
+- **🖥️ Multi-Platform** — Run seamlessly on Windows and Linux servers
+- **🐳 Container Ready** — Deploy easily with Docker for consistent environments
+- **🔧 Rich Tooling** — Get IntelliSense, debugging, and refactoring support from Visual Studio and VS Code
 
 ```csharp
-class GameMode : BaseMode
+class PlayerSystem : ISystem
 {
-    protected override void OnPlayerConnected(BasePlayer player, EventArgs e)
+    [Event]
+    public void OnPlayerConnect(Player player)
     {
-        base.OnPlayerConnected(player, e);
-        player.SendClientMessage($"Welcome {player.Name}!");
+        player.SendClientMessage($"Welcome {player.Name}! You're the {player.Id}th player.");
+        Console.WriteLine($"{player.Name} connected to the server.");
+    }
+
+    [Event]
+    public void OnPlayerDisconnect(Player player)
+    {
+        Console.WriteLine($"{player.Name} disconnected from the server.");
     }
 }
 ```
 
 ---
 
-## Why SampSharp?
+## Getting Started
 
-| Feature | Benefit |
-|---------|---------|
-| 📝 **Modern Language** | Write game modes in C# - a powerful, object-oriented language |
-| ⚡ **High Performance** | Leverage the speed and efficiency of .NET Core |
-| 📦 **NuGet Packages** | Access thousands of packages from the NuGet ecosystem |
-| 🖥️ **Multi-Platform** | Run on Windows and Linux seamlessly |
-| 🐳 **Container Ready** | Deploy easily in Docker containers |
+Ready to build? Check out the resources below:
+
+- **[Documentation](~/docs/index.md)** — Learn the framework concepts and architecture
+- **[Sample Projects](https://github.com/SampSharp/samples)** — Real-world examples to learn from
 
 ---
 
-## Documentation
+## Community & Support
 
-Start with the [Introduction](~/docs/index.md) to understand the framework, then follow the [Getting Started](getting-started.md) guide to set up your first project.
-
-For API details, visit the [complete API reference](https://api.sampsharp.net/).
+Have questions? Join us on [Discord](https://discord.gg/gwcHpqp) or visit the [GitHub repository](https://github.com/ikkentim/SampSharp).
