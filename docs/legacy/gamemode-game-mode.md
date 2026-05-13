@@ -1,9 +1,8 @@
 ---
 title: GameMode
+uid: legacy-gamemode-game-mode
 ---
 
-Introduction
-------------
 Your game mode class is your main SampSharp class. Every SA-MP callback is
 turned into a C# event by SampSharp and can be found within your game mode
 class. Functions which are normally run from within your `OnGameModeInit`

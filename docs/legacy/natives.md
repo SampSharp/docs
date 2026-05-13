@@ -1,8 +1,8 @@
 ---
 title: Natives
+uid: legacy-natives
 ---
 
-## Introduction
 Though SampSharp provides access to nearly all available SA-MP natives through various wrapper types, there are still situations where you might want to call a native which SampSharp does not provide a wrapper for. In these cases you can write your own wrapper for the native function. Writing wrappers is trivial, all you need to do is create a class which contains the signatures of the natives you want to write the wrapper for.
 
 If you come across a SA-MP native which is not available in SampSharp, please [raise an issue in the SampSharp repository](https://github.com/ikkentim/SampSharp/issues) so we can take a look at it. Please note we don't provide wrappers for natives which provide functionality which can be performed within .NET, such as string or time operations.

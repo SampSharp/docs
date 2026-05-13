@@ -1,5 +1,15 @@
 items:
 - name: Introduction
   href: index.md
+- name: Getting Started
+  href: getting-started.md
+- name: Core Concepts
+  href: core-concepts.md
+- name: Guides
+  href: guides/toc.yml
+- name: Reference
+  href: reference/toc.yml
+- name: Support
+  href: support/toc.yml
 - name: Legacy
   href: legacy/toc.yml

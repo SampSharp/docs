@@ -1,9 +1,8 @@
 ---
 title: TextDraws
+uid: legacy-gamemode-textdraws
 ---
 
-Introduction
-------------
 SampSharp supports both SA:MP textdraws type: global textdraws and player textdraws.
 
 | SampSharp class | Description                                             |

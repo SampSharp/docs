@@ -1,9 +1,8 @@
 ---
 title: Accessing the server.cfg configuration file
+uid: legacy-gamemode-accessing-server-cfg
 ---
 
-Introduction
-------------
 SampSharp provides some functions to access the server.cfg file and read its values.
 
 Reading

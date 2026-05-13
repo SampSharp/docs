@@ -1,5 +1,6 @@
 ---
 title: Troubleshooting
+uid: legacy-troubleshooting
 ---
 
 Running on Linux

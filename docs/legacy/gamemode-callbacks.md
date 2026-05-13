@@ -1,9 +1,8 @@
 ---
 title: Callbacks
+uid: legacy-gamemode-callbacks
 ---
 
-Introduction
-------------
 SampSharp provides an easy-to-use system for catching callbacks. When a callback is called, SampSharp automatically checks for a method with the same name within the game mode and every loaded extension.
 
 **Notice!** Callbacks provided by SA-MP are all handled by the framework by default. This documentation can be used for handling custom callbacks and callbacks provided by various plugins.

@@ -1,15 +1,25 @@
 ---
-title: Introduction
+title: SampSharp Legacy (v0.x)
+uid: legacy-docs
 ---
 
-SampSharp is a framework for writing game modes for SA-MP using C# and the .NET runtime. This means you can make use of everything [.NET](https://dot.net) has to offer, including [thousands of NuGet packages](https://nuget.org).
+> [!IMPORTANT]
+> These are the legacy documentation pages for SampSharp **v0.x** (for SA-MP servers). This version is no longer actively developed and only receives critical bug fixes and security patches.
+>
+> **We strongly recommend using the new SampSharp for open.mp (v1.x) for all new projects.**
+>
+> The new version offers modern .NET support, active development, and many improvements. If you are starting a new project or planning to migrate, please refer to the <xref:getting-started> and <xref:migration-guide> for SampSharp v1.x.
+>
+> If you are maintaining an existing SA-MP server, you may continue using these legacy docs.
 
-SampSharp consists of a few parts:
-- A plugin which hosts the .NET Runtime and provides the an API interface which SampSharp's .NET libraries consumes
-- SampSharp.Core: A .NET library which provides a clean .NET API for using SA-MP native functions and hooking into SA-MP callbacks 
+---
+
+SampSharp v0.x is a framework for writing game modes for SA-MP using C# and the .NET runtime. This means you can make use of everything [.NET](https://dot.net) has to offer, including [thousands of NuGet packages](https://nuget.org).
+
+SampSharp v0.x consists of a few parts:
+- A plugin which hosts the .NET Runtime and provides an API interface which SampSharp's .NET libraries consume
+- SampSharp.Core: A .NET library which provides a clean .NET API for using SA-MP native functions and hooking into SA-MP callbacks
 - Two variants of frameworks for writing a game mode with .NET: SampSharp.GameMode and SampSharp.Entities
-
-See [Getting Started](getting-started.md) for information about how to start developing your first SampSharp game mode.
 
 ## Frameworks
 SampSharp provides two frameworks for developing game modes. Though you can make any game mode you want with either framework, they differ vastly and how you structure you code and how you will interact with the different entities within SA-MP.
