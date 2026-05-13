@@ -82,6 +82,7 @@ docs/
 
 - **Internal links**: Use relative paths with `.md` extension: `[link text](systems.md)` or `[link text](../guides/systems.md)`
 - **External links**: Use full URLs: `https://example.com`
+- **Cross-references**: Link to other documentation pages using `<xref:uid>` (where `uid` is the page's `uid` field from frontmatter): `<xref:systems>`
 - **Note blocks**: Use `> [!NOTE]` syntax for important callouts
 - **Tabs**: Use DocFX tab syntax for tabbed content (see [DocFX Markdown Documentation](https://dotnet.github.io/docfx/docs/markdown.html))
 - **Code references**: Use `<xref:ClassName>` to create cross-references to API documentation
