@@ -14,7 +14,7 @@
       ],
       "dest": "api"
     },
-        {
+    {
       "src": [
         {
           "src": "sampsharp-src",
@@ -31,24 +31,19 @@
   "build": {
     "content": [
       {
-        "files": [
-          "**/*.{md,yml}"
-        ],
-        "exclude": [
-          "_site/**"
-        ]
+        "files": ["**/*.{md,yml}"],
+        "exclude": ["_site/**"]
       }
     ],
     "resource": [
       {
-        "files": ["images/**"],
-        "src": "docs"
+        "files": ["docs/**/images/**", "assets/**"]
       }
     ],
     "globalMetadata": {
       "_appTitle": "SampSharp",
       "_appName": "SampSharp",
-      "_appLogoPath": "sampsharp.png",
+      "_appLogoPath": "assets/sampsharp.png",
       "_appFooter": "SampSharp - Copyright © 2015 - 2026 Tim Potze",
       "_enableSearch": true,
       "pdf": false,
