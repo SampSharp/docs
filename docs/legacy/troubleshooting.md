@@ -3,6 +3,8 @@ title: Troubleshooting
 uid: legacy-troubleshooting
 ---
 
+# Troubleshooting
+
 Running on Linux
 ----------------
 

@@ -3,6 +3,8 @@ title: Players
 uid: legacy-gamemode-players
 ---
 
+# Players
+
 The `BasePlayer` class represents a SA-MP player. This class contains the
 methods, properties and events related to players. 
 

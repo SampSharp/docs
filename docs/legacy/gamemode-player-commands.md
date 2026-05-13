@@ -3,6 +3,8 @@ title: Player Commands
 uid: legacy-gamemode-player-commands
 ---
 
+# Player Commands
+
 SampSharp provides an easy-to-use commands system. A command can be created by registering a class to the `CommandManager` service or by decorating a method with the `Command` attribute.
 
 Decorating Methods

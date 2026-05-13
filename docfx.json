@@ -6,7 +6,9 @@
         {
           "src": "sampsharp-src",
           "files": [
-            "build/bin/SampSharp.OpenMp.Entities.Commands/**/SampSharp.OpenMp.Entities.dll"
+            "build/bin/SampSharp.OpenMp.Entities.Commands/Release/net10.0/SampSharp.OpenMp.Entities.Commands.dll",
+            "build/bin/SampSharp.OpenMp.Entities/Release/net10.0/SampSharp.OpenMp.Entities.dll",
+            "build/bin/SampSharp.OpenMp.Core/Release/net10.0/SampSharp.OpenMp.Core.dll"
           ]
         }
       ],

@@ -3,6 +3,8 @@ title: Dialogs
 uid: legacy-gamemode-dialogs
 ---
 
+# Dialogs
+
 SampSharp supports all of the dialog styles from SA:MP, implemented in an object-oriented manner. 
 
 The available dialog classes are:

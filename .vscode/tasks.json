@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "docfx serve",
+      "type": "shell",
+      "command": "docfx",
+      "args": ["--serve"],
+      "isBackground": true,
+      "problemMatcher": []
+    }
+  ]
+}

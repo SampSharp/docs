@@ -3,6 +3,8 @@ title: Running a Server in Production
 uid: legacy-production
 ---
 
+# Running a Server in Production
+
 When you want to run your game mode on a samp-server you'll need to publish your dotnet project and download/extract the .NET Runtime and SampSharp plugin into your server directory.
 
 ## Publishing your Game Mode

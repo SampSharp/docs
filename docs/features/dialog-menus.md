@@ -1,6 +1,6 @@
 ---
 title: Dialogs and Menus
-uid: dialog-menus
+uid: dialogs-menus
 ---
 
 # Dialogs and Menus

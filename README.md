@@ -20,7 +20,13 @@ This repository contains the source files for the SampSharp documentation. The s
    dotnet tool install -g docfx
    ```
 
-2. Start the development server:
+2. Build the SampSharp component:
+
+   ```bash
+   cd sampsharp-src && ./build.sh component
+   ```
+
+3. Start the development server:
 
    ```bash
    docfx --serve
@@ -81,11 +87,11 @@ docs/
 ### Markdown Tips
 
 - **Internal links**: Use relative paths with `.md` extension: `[link text](systems.md)` or `[link text](../guides/systems.md)`
-- **External links**: Use full URLs: `https://example.com`
+- **External links**: Use full URLs: `[link text](https://example.com)`
 - **Cross-references**: Link to other documentation pages using `<xref:uid>` (where `uid` is the page's `uid` field from frontmatter): `<xref:systems>`
 - **Note blocks**: Use `> [!NOTE]` syntax for important callouts
 - **Tabs**: Use DocFX tab syntax for tabbed content (see [DocFX Markdown Documentation](https://dotnet.github.io/docfx/docs/markdown.html))
-- **Code references**: Use `<xref:ClassName>` to create cross-references to API documentation
+- **Code references**: Use `<xref:NameSpace.ClassName>` to create cross-references to API documentation
 
 ## Resources
 

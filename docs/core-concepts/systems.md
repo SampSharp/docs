@@ -1,9 +1,9 @@
 ---
-title: Writing Systems
+title: Systems
 uid: systems
 ---
 
-# Writing Systems
+# Systems
 
 TODO: Provide detailed guide on creating custom systems including:
 - What are systems and their role in ECS

@@ -3,6 +3,8 @@ title: Configuring and Debugging Legacy SampSharp
 uid: legacy-configure-legacy-sampsharp
 ---
 
+# Configuring and Debugging Legacy SampSharp
+
 ## Overview
 This guide explains how to configure and debug legacy SampSharp (v0.x) for SA-MP servers. It covers setting up the plugin, .NET runtime, and Visual Studio for starting and debugging your game mode. These instructions are for legacy SampSharp only.
 

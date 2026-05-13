@@ -1,7 +1,9 @@
 ---
-title: Getting Started with SampSharp for open.mp
+title: Getting Started
 uid: getting-started
 ---
+
+#  Getting Started with SampSharp for open.mp
 
 Welcome to SampSharp! This guide will help you create and run your first gamemode using SampSharp v1.x for open.mp.
 

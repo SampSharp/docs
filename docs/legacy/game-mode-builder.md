@@ -3,6 +3,8 @@ title: GameModeBuilder
 uid: legacy-game-mode-builder
 ---
 
+# GameModeBuilder
+
 The `GameModeBuilder` can be used to configure how your game mode is launched. Generally, you'll be using the `GameModeBuilder` from the entry-point of your assembly.
 
 ```c#

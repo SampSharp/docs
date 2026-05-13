@@ -3,6 +3,8 @@ title: Extensions
 uid: legacy-gamemode-extensions
 ---
 
+# Extensions
+
 Extensions are .NET Assemblies (separate from game modes) which provide additional functionality to the framework, for example, by wrapping around the natives and callbacks of a plugin.
 
 ## Entry Point

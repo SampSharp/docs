@@ -3,6 +3,8 @@ title: SampSharp Legacy (v0.x)
 uid: legacy-docs
 ---
 
+# SampSharp Legacy (v0.x)
+
 > [!IMPORTANT]
 > These are the legacy documentation pages for SampSharp **v0.x** (for SA-MP servers). This version is no longer actively developed and only receives critical bug fixes and security patches.
 >
