@@ -1,6 +1,8 @@
-node_modules/
-docs/.vitepress/dist/
-docs/.vitepress/cache/
-.DS_Store
-*.local
-.env.local
+_site/**
+
+api/**
+!api/index.md
+!api/toc.yml
+legacy-api/**
+!legacy-api/index.md
+!legacy-api/toc.yml

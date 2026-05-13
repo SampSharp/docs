@@ -1,39 +1,34 @@
 # SampSharp Documentation
 
-This repository contains the SampSharp documentation source files. The site is built with [VitePress](https://vitepress.dev/), a fast, modern static site generator.
+This repository contains the SampSharp documentation source files. The site is built with [DocFX](https://dotnet.github.io/docfx/), a powerful documentation generator with excellent .NET integration.
 
 ## For Documentation Maintainers
 
 ### Prerequisites
 
-- Node.js 18+
-- npm
+- .NET SDK 6.0 or later
 
 ### Running Locally
 
-1. Install dependencies:
+1. Install DocFX (one-time setup):
 
    ```bash
-   npm install
+   dotnet tool install -g docfx
    ```
 
 2. Start the development server:
 
    ```bash
-   npm run docs:dev
+   docfx --serve
    ```
 
-   The site will be available at `http://localhost:5173/`
+   The site will be available at `http://localhost:8080/`
 
 3. Build the static site:
 
    ```bash
-   npm run docs:build
-   ```
-
-4. Preview the production build locally:
-   ```bash
-   npm run docs:preview
+   docfx
+   cp docs/public/sampsharp.png _site/
    ```
 
 ### Adding/Editing Documentation
@@ -41,13 +36,9 @@ This repository contains the SampSharp documentation source files. The site is b
 All documentation is written in Markdown in the `docs/` folder.
 
 - **Create a new page**: Add a new `.md` file in `docs/`
-- **Update navigation**: Edit `docs/.vitepress/config.js` to add the page to the sidebar
-- Links use absolute paths: `/page-name` not `./page-name`
-- Internal links should use absolute paths
+- **Update navigation**: Edit `docs/toc.yml` to add the page to the table of contents
+- Internal links should use `.md` extension: `[link text](page.md)`
 - External links require full URLs: `https://example.com`
-- File names are case-sensitive on Linux/Mac
-
-### Project Structure
 
 ```
 ├── docs/

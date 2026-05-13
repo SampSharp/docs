@@ -9,7 +9,7 @@ SampSharp consists of a few parts:
 - SampSharp.Core: A .NET library which provides a clean .NET API for using SA-MP native functions and hooking into SA-MP callbacks 
 - Two variants of frameworks for writing a game mode with .NET: SampSharp.GameMode and SampSharp.Entities
 
-See [Getting Started](getting-started) for information about how to start developing your first SampSharp game mode.
+See [Getting Started](getting-started.md) for information about how to start developing your first SampSharp game mode.
 
 ## Frameworks
 SampSharp provides two frameworks for developing game modes. Though you can make any game mode you want with either framework, they differ vastly and how you structure you code and how you will interact with the different entities within SA-MP.
