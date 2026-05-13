@@ -29,6 +29,7 @@
       "_appTitle": "SampSharp",
       "_appName": "SampSharp",
       "_appLogoPath": "assets/sampsharp.png",
+      "_appFaviconPath": "assets/sampsharp.png",
       "_appFooter": "SampSharp - Copyright © 2015 - 2026 Tim Potze",
       "_enableSearch": true,
       "pdf": false,
