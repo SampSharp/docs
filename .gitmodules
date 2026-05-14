@@ -1,0 +1,3 @@
+[submodule "sampsharp-src"]
+	path = sampsharp-src
+	url = https://github.com/ikkentim/sampsharp.git

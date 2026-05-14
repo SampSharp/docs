@@ -1,104 +1,100 @@
 # SampSharp Documentation
 
-This repository contains the SampSharp documentation source files. The site is built with [VitePress](https://vitepress.dev/), a fast, modern static site generator.
+This repository contains the source files for the SampSharp documentation. The site is built with [DocFX](https://dotnet.github.io/docfx/), a powerful documentation generator designed for .NET projects.
 
-## For Documentation Maintainers
+> **For Documentation Contributors Only**
+> 
+> This guide is intended for people contributing to the SampSharp documentation. If you're looking for SampSharp documentation, visit [sampsharp.net](https://sampsharp.net).
+
+## Quick Start
 
 ### Prerequisites
 
-- Node.js 18+
-- npm
+- .NET 10 SDK or later
 
 ### Running Locally
 
-1. Install dependencies:
+1. Install DocFX (one-time setup):
 
    ```bash
-   npm install
+   dotnet tool install -g docfx
    ```
 
-2. Start the development server:
+2. Build the SampSharp component:
 
    ```bash
-   npm run docs:dev
+   cd sampsharp-src && ./build.sh component
    ```
 
-   The site will be available at `http://localhost:5173/`
-
-3. Build the static site:
+3. Start the development server:
 
    ```bash
-   npm run docs:build
+   docfx --serve
    ```
 
-4. Preview the production build locally:
-   ```bash
-   npm run docs:preview
+   The site will be available at `http://localhost:8080/`
+
+## Contributing
+
+### Writing Documentation
+
+All documentation is written in Markdown in the `docs/` folder. For Markdown syntax reference, see the [DocFX Markdown Documentation](https://dotnet.github.io/docfx/docs/markdown.html).
+
+#### Adding a New Page
+
+1. Create a new `.md` file in the appropriate folder under `docs/`:
+   - `docs/guides/` - How-to guides and tutorials
+   - `docs/reference/` - Reference material
+   - `docs/support/` - Support content (troubleshooting, migration guides)
+
+2. Add a YAML frontmatter header to the file:
+   ```yaml
+   ---
+   title: Your Page Title
+   uid: unique-identifier
+   ---
    ```
 
-### Adding/Editing Documentation
+3. Add the file reference to the corresponding `toc.yml`:
+   ```yaml
+   - href: your-page.md
+   ```
 
-All documentation is written in Markdown in the `docs/` folder.
-
-- **Create a new page**: Add a new `.md` file in `docs/`
-- **Update navigation**: Edit `docs/.vitepress/config.js` to add the page to the sidebar
-- Links use absolute paths: `/page-name` not `./page-name`
-- Internal links should use absolute paths
-- External links require full URLs: `https://example.com`
-- File names are case-sensitive on Linux/Mac
-
-### Project Structure
+#### Documentation Structure
 
 ```
-├── docs/
-│   ├── .vitepress/
-│   │   ├── config.js           # VitePress configuration
-│   │   └── theme/
-│   │       ├── index.js        # Theme entry point
-│   │       └── style.css       # Custom styles
-│   ├── index.md                # Home page
-│   ├── introduction.md         # Documentation pages
-│   ├── getting-started.md
-│   ├── images/                 # Images and assets
-│   └── ...other markdown files
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Actions workflow for auto-deployment
-├── package.json
-└── README.md
+docs/
+├── index.md                    # Home page
+├── getting-started.md          # Getting started guide
+├── core-concepts.md            # Core concepts
+├── guides/
+│   ├── toc.yml                 # Guides table of contents
+│   ├── systems.md
+│   ├── components.md
+│   └── ...
+├── reference/
+│   ├── toc.yml                 # Reference table of contents
+│   ├── advanced-topics.md
+│   └── ...
+├── support/
+│   ├── toc.yml                 # Support table of contents
+│   ├── troubleshooting.md
+│   └── ...
+├── legacy/                     # Deprecated content
+└── toc.yml                     # Main table of contents
 ```
 
-### Troubleshooting
+### Markdown Tips
 
-**Build errors about dead links**
-
-Check:
-
-- Internal links should use absolute paths: `/page-name` not `./page-name`
-- External links should include full URLs: `https://example.com`
-- File names must match exactly (case-sensitive on Linux/Mac)
-
-**Syntax highlighting not working for code blocks**
-
-Some languages (like PAWN) may not be built-in. The build will fall back to text highlighting, which is fine.
-
-**Site not deploying via GitHub Actions**
-
-1. Check that your repository has a `main` branch (not `master`)
-2. Verify GitHub Pages is configured to use GitHub Actions as source
-3. Check the Actions tab in your GitHub repository for error logs
-
-## Deployment
-
-The site automatically deploys to GitHub Pages when you push to the `main` branch via the GitHub Actions workflow (`.github/workflows/deploy.yml`).
-
-To manually deploy or host elsewhere:
-
-1. Build: `npm run docs:build`
-2. Upload the contents of `docs/.vitepress/dist/` to your hosting provider
-3. Configure your web server to serve the static files
+- **Internal links**: Use relative paths with `.md` extension: `[link text](systems.md)` or `[link text](../guides/systems.md)`
+- **External links**: Use full URLs: `[link text](https://example.com)`
+- **Cross-references**: Link to other documentation pages using `<xref:uid>` (where `uid` is the page's `uid` field from frontmatter): `<xref:systems>`
+- **Note blocks**: Use `> [!NOTE]` syntax for important callouts
+- **Tabs**: Use DocFX tab syntax for tabbed content (see [DocFX Markdown Documentation](https://dotnet.github.io/docfx/docs/markdown.html))
+- **Code references**: Use `<xref:NameSpace.ClassName>` to create cross-references to API documentation
 
 ## Resources
 
-- [VitePress Documentation](https://vitepress.dev/)
+- [DocFX Documentation](https://dotnet.github.io/docfx/)
+- [DocFX Markdown Guide](https://dotnet.github.io/docfx/docs/markdown.html)
 - [SampSharp Project](https://sampsharp.net/)

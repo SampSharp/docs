@@ -1,98 +1,108 @@
 ---
 title: Getting Started
+uid: getting-started
 ---
 
-## Introduction
-This guide will help you to to get your first SA-MP server up and running with your own SampSharp game mode. In this guide we will asume you are using Windows and will be using Visual Studio to develop your game mode.
+#  Getting Started with SampSharp for open.mp
+
+Welcome to SampSharp! This guide will help you create and run your first gamemode using SampSharp v1.x for open.mp.
 
 ## Prerequisites
-Before we get started, you'll need to install the following things:
-- [Visual Studio](https://visualstudio.microsoft.com/downloads/) (2022 or newer, the community edition is free for everyone)
-- [SA-MP Windows Server](https://sa-mp.mp/downloads/) (extract it anywhere you like)
 
-## Installing the SampSharp plugin
-Using the following instructions you can install the SampSharp plugin and configure it for running your first game mode.
+Before you begin, you'll need:
 
-- Download the latest `SampSharp-{version}.zip` from the [SampSharp releases page on GitHub](https://github.com/ikkentim/SampSharp/releases/latest) page and extract its contents to your SA-MP server directory
-- Download the latest <u>x86 binaries release</u> of the .NET Runtime from the [.NET 6.0 download page](https://dotnet.microsoft.com/en-us/download/dotnet) and extract its contents to a new folder named `runtime` in your SA-MP server directory.  
-![x86 of .NET Runtime](images/download-dotnet-windows.png)
-- Open the `server.cfg` file in your SA-MP server directory with your favorite text editor and update the following values:
-  - Add the line `plugins SampSharp`
-  - Change the line starting with `gamemode0` to `gamemode0 empty 1`
-  - Remove the line starting with `filterscripts`
-  - Change the value after `rcon_password` to a secure password
-  After making these changes, the configuration should look like like this:
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet) or later
+- open.mp server with SampSharp component (see [Setting Up open.mp Server](#setting-up-openmp-server))
+- A basic understanding of C# and object-oriented programming
 
+### Choose Your IDE
+
+# [Visual Studio](#tab/visualstudio)
+
+Install [Visual Studio](https://visualstudio.microsoft.com/) with the `.NET desktop development` workload:
+1. Download and run the Visual Studio installer
+2. Select the `.NET desktop development` workload during installation
+3. Complete the installation
+
+> [!NOTE]
+> The `.NET desktop development` workload includes the .NET 10 SDK, so you don't need to install it separately.
+
+# [Visual Studio Code](#tab/vscode)
+
+Install [Visual Studio Code](https://code.visualstudio.com/) and the required extensions:
+- [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
+- [C# DevKit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+
+---
+
+## Setting Up open.mp Server
+
+SampSharp requires a **64-bit version** of open.mp because the .NET runtime runs as x64. 
+
+1. Download the x64 build from the [SampSharp open.mp x64 releases page](https://github.com/SampSharp/openmultiplayer-x64-builds/releases) and extract it anywhere on your system (e.g., `C:\open.mp` or `~/open.mp`).
+
+2. Download the SampSharp component from the [SampSharp releases page](https://github.com/ikkentim/SampSharp/releases) and extract it into the `components` directory of your open.mp server installation.
+
+## Creating Your First Project
+
+Install the SampSharp template:
+```bash
+dotnet new install SampSharp.Templates
 ```
-echo Executing Server Config...
-lanmode 0
-rcon_password SuperSecretPassword
-maxplayers 50
-port 7777
-hostname SA-MP 0.3 Server
-gamemode0 empty 1
-announce 0
-chatlogging 0
-weburl www.sa-mp.com
-onfoot_rate 40
-incar_rate 40
-weapon_rate 40
-stream_distance 300.0
-stream_rate 1000
-maxnpc 0
-logtimeformat [%H:%M:%S]
-language English
-plugins SampSharp
+
+Create a new project:
+```bash
+dotnet new sampsharp -n MyFirstGameMode
+cd MyFirstGameMode
 ```
 
-## Creating a game mode project
-It is now time to create your first game mode project. To make things easier, we've created a template for getting started with your first game mode. You can download the [SampSharp Templates for Visual Studio](https://marketplace.visualstudio.com/items?itemName=ikkentim.sampsharptempltes) from the Visual Studio marketplace webpage or using the extension manager in Visual Studio.
+The template automatically creates:
+- A configured `Startup.cs` class with the ECS framework initialized
+- A sample `MyFirstSystem.cs` system with example events and commands
+- A `.csproj` file with the necessary SampSharp NuGet package references
 
-- Open Visual Studio and create a new project
-- In the 'Create a new project' dialog, search for the 'SampSharp Game Mode' project template and click on Next
-- Enter a project name, such as 'MyFirstGameMode' and click on Create  
-![Find SampSharp in the 'Create a new project' dialog](images/devenv-new-project.png)
+**Startup.cs** implements `IEcsStartup` to configure the ECS framework, logging, and middleware.
 
-You have now successfully created your game mode! In order to start your game mode with your server, you need to change some properties in your project. 
-- Right click your projects in the 'Solution Explorer' and select 'Properties'.
-- Under 'Build' -> 'Output', change the 'Base output path' value using the 'Browse'-button to a new folder named `gamemode` in your SA-MP server directory
-- Under 'Debug' -> 'General' click on 'Open debug launch profiles UI'
-  - Create a new 'Executable' profile
-  - Set 'Executable' to the 'samp-server.exe' in your SA-MP server directory
-  - Set the 'Working directory' to your SA-MP server directory
-  - (optional) Remove the default 'project' launch profile
-  - (optional) Rename your new profile
+**MyFirstSystem.cs** is an example system showing how to handle events, commands, and access services. For more details on systems, see the <xref:systems> page.
 
+## Running Your Gamemode
 
-![Creating a launch profile](images/devenv-launch-profiles.png)
+### Configure Your IDE
 
-By clicking the 'Start Debugging' button in Visual Studio, you will now start your game mode in your SA-MP server
+# [Visual Studio](#tab/visualstudio)
 
-![Start Debugging your project](images/devenv-start-debugging.png)
+1. Open the project in Visual Studio.
+2. Press `F5` or go to **Debug** > **Start Debugging** to launch the project with the debugger attached.
 
-## Choose your framework
-SampSharp provides two frameworks for creating your gamemodes, SampSharp.GameMode and SampSharp.Entities. You can choose to build your game mode on top of one of the frameworks. Using the instructions above, you have created a SampSharp.GameMode game mode.
+# [Visual Studio Code](#tab/vscode)
 
-Both frameworks are fully featured and provide tools, types and functions for using all functionality provided by SA-MP. They also provide tools allowing you to easily create player commands.
+Create a `.vscode/launch.json` file in your project root:
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "SampSharp Gamemode",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/MyFirstGameMode.csproj"
+        }
+    ]
+}
+```
+Update the `projectPath` to match your project's `.csproj` file location.
 
-### SampSharp.GameMode
-SampSharp.GameMode is the first framework created for SampSharp and has been availble since the early days of SampSharp.
+---
 
-**Benefits**
-- Easy to understand, simple enough for people who are new to C#
-- A simple object-oriented types for all SA-MP types such as players, vehicles, objects, etc.
+### Launch Steps
 
-You can create a SampSharp.GameMode game mode using the 'SampSharp Game Mode' project template.
+1. **First Launch**: Start the debugger with your launch configuration. The application will prompt you to enter the path to your open.mp server directory.
+2. **Enter Path**: Provide the full path to your open.mp installation (e.g., `C:\open.mp` or `/home/user/open.mp`).
+3. **Configuration Generated**: A `launchSettings.json` file will be generated with your open.mp path, and the application will close.
+4. **Second Launch**: Start the debugger again. The gamemode will now launch directly with your open.mp server, fully configured and ready to debug.
 
-### SampSharp.Entities
-The SampSharp.Entities framework has been created to solve a number of issues which could make life more difficult with SampSharp.GameMode.
+## Next Steps
 
-**Benefits**
-- Entity-Component-System structure for building your gamemodes:
-  - Easily associate data with entities (players/vehicles/etc.) without having to create and keep track of association dictionaries
-  - Easily extend existing entities with custom data using components
-  - A simple and clear-cut way of organizing your code by responsibility using systems
-- Components for all SA-MP types such as players, vehicles, objects, etc.
-- Dependency injection
-
-You can create a SampSharp.Entities game mode using the 'SampSharp ECS Game Mode' project template.
+- **Explore the Documentation**: Learn about <xref:core-concepts>, <xref:commands>, and <xref:vehicles>
+- **Check Out Examples**: Visit the [SampSharp samples repository](https://github.com/sampsharp/samples) for complete example gamemodes
+- **Join the Community**: Have questions? Join us on [Discord](https://discord.gg/gwcHpqp) where you can get help and discuss development with other SampSharp developers

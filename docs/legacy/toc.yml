@@ -1,0 +1,24 @@
+items:
+- name: SampSharp Legacy
+  href: index.md
+- href: configure-legacy-sampsharp.md
+- name: Basics
+  items:
+    - href: production.md
+    - href: troubleshooting.md
+    - href: game-mode-builder.md
+- name: Advanced
+  items:
+    - href: natives.md
+    - href: threading.md
+- name: GameMode Framework
+  items:
+    - href: gamemode-game-mode.md
+    - href: gamemode-players.md
+    - href: gamemode-dialogs.md
+    - href: gamemode-textdraws.md
+    - href: gamemode-player-commands.md
+    - href: gamemode-accessing-server.cfg.md
+    - href: gamemode-controllers.md
+    - href: gamemode-callbacks.md
+    - href: gamemode-extensions.md

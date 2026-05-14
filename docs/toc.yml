@@ -1,0 +1,12 @@
+items:
+- href: getting-started.md
+- href: core-concepts/toc.yml
+  name: Core Concepts
+- name: Features
+  href: features/toc.yml
+- name: Reference
+  href: reference/toc.yml
+- name: Support
+  href: support/toc.yml
+- name: Legacy
+  href: legacy/toc.yml

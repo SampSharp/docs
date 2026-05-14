@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "sampsharp-src",
+          "files": [
+            "build/bin/SampSharp.OpenMp.Entities.Commands/Release/net10.0/SampSharp.OpenMp.Entities.Commands.dll",
+            "build/bin/SampSharp.OpenMp.Entities/Release/net10.0/SampSharp.OpenMp.Entities.dll",
+            "build/bin/SampSharp.OpenMp.Core/Release/net10.0/SampSharp.OpenMp.Core.dll"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["**/*.{md,yml}"],
+        "exclude": ["_site/**", "sampsharp-src/**"]
+      }
+    ],
+    "resource": [
+      {
+        "files": ["docs/**/images/**", "assets/**"]
+      }
+    ],
+    "globalMetadata": {
+      "_appTitle": "SampSharp",
+      "_appName": "SampSharp",
+      "_appLogoPath": "assets/sampsharp.png",
+      "_appFaviconPath": "assets/sampsharp.png",
+      "_appFooter": "SampSharp - Copyright © 2015 - 2026 Tim Potze",
+      "_enableSearch": true,
+      "pdf": false,
+      "_gitContribute": {
+        "repo": "https://github.com/sampsharp/docs",
+        "branch": "main",
+        "apiSpecFolder": "docs"
+      }
+    },
+    "template": ["default", "modern", "template/"],
+    "output": "_site"
+  }
+}
