@@ -143,5 +143,3 @@ Below is a list of the most important components provided by SampSharp:
 | <xref:SampSharp.Entities.SAMP.TextDraw> | Represents a textdraw |
 | <xref:SampSharp.Entities.SAMP.TextLabel> | Represents a text label |
 | <xref:SampSharp.Entities.SAMP.Vehicle> | Represents a vehicle |
-
-For more details, see the source files in `SampSharp.OpenMp.Entities.SAMP.Components`.

@@ -1,17 +1,17 @@
 ---
-title: Core Concepts
+title: Entity-Component-System
 uid: core-concepts
 ---
 
 # Core Concepts
 
-## Entity Component System (ECS)
+## Entity-Component-System (ECS)
 
-SampSharp is built on the **Entity Component System** (ECS) architecture, a powerful design pattern that separates data from logic and provides a flexible, scalable approach to building game modes. This chapter explains the fundamental concepts you need to understand to work effectively with SampSharp.
+SampSharp is built on the **Entity-Component-System** (ECS) architecture, a powerful design pattern that separates data from logic and provides a flexible, scalable approach to building game modes. This chapter explains the fundamental concepts you need to understand to work effectively with SampSharp.
 
 ### What is ECS?
 
-The Entity Component System is an architectural pattern that organizes game objects and their behavior through three key concepts:
+The Entity-Component-System is an architectural pattern that organizes game objects and their behavior through three key concepts:
 
 1. **Entities** - the objects in your game world
 2. **Components** - the data that describes those objects

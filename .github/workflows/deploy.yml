@@ -31,7 +31,7 @@ jobs:
         run: cd sampsharp-src && ./build.sh component
 
       - name: Build documentation
-        run: docfx
+        run: docfx docfx.json
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

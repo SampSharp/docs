@@ -3,5 +3,5 @@
     "docfx": true,
     "test": true
   },
-  "cSpell.words": ["sampsharp"]
+  "cSpell.words": ["blockquotes", "frontmatter", "sampsharp", "textdraw"]
 }

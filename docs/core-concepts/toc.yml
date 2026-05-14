@@ -1,9 +1,5 @@
 items:
-- name: Introduction
-  href: index.md
-- name: Entities and Components
-  href: entities-components.md
-- name: Writing Systems
-  href: systems.md
-- name: Events
-  href: events.md
+- href: index.md
+- href: entities-components.md
+- href: systems.md
+- href: events.md

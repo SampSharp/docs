@@ -56,11 +56,13 @@ _disableAffix: true
     }
   }
   
-  .feature-box h3 {
+  .feature-box-title {
     color: #0078d4;
     margin-top: 0;
     margin-bottom: 12px;
     font-size: 18px;
+    display: block;
+    font-weight: 600;
   }
   
   .feature-box p {
@@ -81,39 +83,39 @@ _disableAffix: true
 
 # Welcome to SampSharp
 
-Build powerful open.mp game modes with modern C# and a proven Entity Component System architecture.
+Build powerful open.mp game modes with modern C# and a proven Entity-Component-System architecture.
 
 ## What is SampSharp?
 
 SampSharp is a framework that lets you write open.mp game modes in **C#** instead of Pawn. Powered by the .NET runtime, it brings modern programming practices, strong typing, and access to the entire NuGet ecosystem to SA-MP/open.mp development. 
 
-The new **SampSharp v1.x** (for open.mp) features an **Entity Component System (ECS)** architecture that makes your code more modular, testable, and maintainable compared to traditional callback-based approaches.
+The new **SampSharp v1.x** (for open.mp) features an **Entity-Component-System (ECS)** architecture that makes your code more modular, testable, and maintainable compared to traditional callback-based approaches.
 
 ## Why Choose SampSharp?
 
 <div class="features-grid">
   <div class="feature-box">
-    <h3><span class="emoji">🎯</span> ECS Architecture</h3>
-    <p>Build scalable systems with clear separation of concerns using the Entity Component System pattern</p>
+    <span class="feature-box-title"><span class="emoji">🎯</span> ECS Architecture</span>
+    <p>Build scalable systems with clear separation of concerns using the Entity-Component-System pattern</p>
   </div>
   <div class="feature-box">
-    <h3><span class="emoji">🔷</span> Modern C#</h3>
+    <span class="feature-box-title"><span class="emoji">🔷</span> Modern C#</span>
     <p>Write type-safe, expressive code with the latest C# language features and LINQ</p>
   </div>
   <div class="feature-box">
-    <h3><span class="emoji">⚡</span> High Performance</h3>
+    <span class="feature-box-title"><span class="emoji">⚡</span> High Performance</span>
     <p>.NET's performance and JIT compilation deliver efficient game mode execution</p>
   </div>
   <div class="feature-box">
-    <h3><span class="emoji">📦</span> NuGet Ecosystem</h3>
+    <span class="feature-box-title"><span class="emoji">📦</span> NuGet Ecosystem</span>
     <p>Use thousands of mature, reliable libraries for logging, JSON, async operations, and more</p>
   </div>
   <div class="feature-box">
-    <h3><span class="emoji">🖥️</span> Multi-Platform</h3>
+    <span class="feature-box-title"><span class="emoji">🖥️</span> Multi-Platform</span>
     <p>Run seamlessly on Windows and Linux servers</p>
   </div>
   <div class="feature-box">
-    <h3><span class="emoji"></span> Rich Tooling</h3>
+    <span class="feature-box-title"><span class="emoji"></span> Rich Tooling</span>
     <p>Get IntelliSense, debugging, and refactoring support from Visual Studio and VS Code. Deploy easily with Docker for consistent environments</p>
   </div>
 </div>

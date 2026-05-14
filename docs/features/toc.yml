@@ -1,12 +1,6 @@
-- name: Features
-  items:
-  - name: Implementing Commands
-    href: commands.md
-  - name: Dialogs and Menus
-    href: dialog-menus.md
-  - name: Working with Players
-    href: players.md
-  - name: Timers and Scheduling
-    href: timers.md
-  - name: Vehicle Management
-    href: vehicles.md
+items:
+- href: commands.md
+- href: dialog-menus.md
+- href: players.md
+- href: timers.md
+- href: vehicles.md
