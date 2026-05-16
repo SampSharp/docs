@@ -23,7 +23,8 @@ This file summarizes all essential knowledge for writing correct cross-reference
   ```
   <xref:my-unique-id>
   ```
-- Or, for Markdown link text:
+  This is the **preferred** syntax.
+- Alternatively, for custom Markdown link text:
   ```
   [Link Text](xref:my-unique-id)
   ```
@@ -33,7 +34,8 @@ This file summarizes all essential knowledge for writing correct cross-reference
 - Always check that the target file has a `uid` in its YAML frontmatter.
 - Use short, descriptive UIDs (lowercase, hyphens/underscores if needed).
 - Never duplicate UIDs across files.
-- Prefer `xref:` links over relative links for conceptual docs when possible.
+- **Prefer `<xref:uid>` syntax** over `[text](xref:uid)` for clarity and simplicity.
+- Use markdown link text syntax only when you need custom link text that differs from the page title.
 - For API docs, use the full type/member name as UID (e.g., `System.String`, `MyNamespace.MyClass.MyMethod`).
 
 ## 4. Troubleshooting
@@ -45,7 +47,7 @@ This file summarizes all essential knowledge for writing correct cross-reference
 
 ## 5. Example
 ```markdown
-See [the events article](xref:events) for more details.
+See <xref:events> for more details.
 ```
 
 ## 6. Useful Links

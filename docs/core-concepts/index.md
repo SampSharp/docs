@@ -88,13 +88,3 @@ Here's how ECS operates in practice with SampSharp:
 3. A system receives the event with the `Player` and `Vehicle` components
 4. The system calculates a fare based on distance traveled and gives money to the player
 5. The system logs the ride for statistics
-
-### Benefits of ECS
-
-The ECS pattern offers several advantages for SampSharp game mode development:
-
-- **Flexibility** - SampSharp's domain-specific components map directly to SA-MP/open.mp concepts, making development intuitive
-- **Decoupling** - Game logic (systems) is separate from data (components), making code easier to test and modify
-- **Maintainability** - Each component handles a distinct aspect of a game entity, keeping concerns separated
-- **Composability** - Complex entities are built by combining simpler components
-- **Extensibility** - Add new systems or custom components without modifying existing code
