@@ -27,6 +27,11 @@
         "files": ["docs/**/images/**", "assets/**"]
       }
     ],
+    "fileMetadata": {
+      "_noindex": {
+        "docs/legacy/**": true
+      }
+    },
     "globalMetadata": {
       "_appTitle": "SampSharp",
       "_appName": "SampSharp",
