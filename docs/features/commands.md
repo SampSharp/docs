@@ -327,18 +327,30 @@ public class MyPermissionChecker : IPermissionChecker
 }
 ```
 
-## Return Types
+## Return Values
 
-Command methods support the following return types:
+Command methods can return values to indicate success or failure:
 
-- `void` - Standard synchronous command execution
-- `bool` - Indicates success (`true`) or failure (`false`)
-- `Task` - Asynchronous command execution
+- `void` - Standard synchronous command execution (always treated as success)
+- `bool` - Returns `true` to indicate success, or `false` to indicate the command was not recognized (proceeds as if command was not found)
+- `Task` - Asynchronous command execution (always treated as success)
 - `Task<bool>` - For synchronous completion, the bool indicates success/failure. For async completion, the task completion is assumed to be success regardless of the return value
+
+## Parameter Types
+
+The command system automatically parses the following parameter types from user input:
+
+- `int`, `float`, `double` - Numeric types
+- `bool` - Boolean values (`true`/`false`)
+- `string` - Text input (greedily consumes remaining input for the last parameter, or a single word for non-last parameters)
+- `Player` or `EntityId` - Player matched by player ID or player name
+- Enum types - Parsed by name (case-insensitive)
+
+Any other parameter type not in this list is treated as a dependency injection parameter and resolved from the service collection.
 
 ## Customization
 
-The command system provides two main extension points for customization: permission checking and text formatting.
+The command system provides extension points for customization: permission checking, text formatting, and custom parameter type parsing.
 
 ### Permission Checking
 
@@ -399,3 +411,36 @@ Register your custom formatter in your startup class to replace the default:
 services.RemoveAll(typeof(ICommandTextFormatter));
 services.AddSingleton<ICommandTextFormatter, MyCommandTextFormatter>();
 ```
+
+### Custom Parameter Type Parsing
+
+To support parsing of custom parameter types, implement <xref:SampSharp.Entities.SAMP.Commands.ICommandParameterParserFactory>. The recommended approach is to extend <xref:SampSharp.Entities.SAMP.Commands.DefaultCommandParameterParserFactory> and override the `CreateParser` method to handle your custom types:
+
+```csharp
+public class MyCommandParameterParserFactory : DefaultCommandParameterParserFactory
+{
+    public override ICommandParameterParser? CreateParser(ParameterInfo[] parameters, int index)
+    {
+        var param = parameters[index];
+        var paramType = param.ParameterType;
+
+        // Handle custom type
+        if (paramType == typeof(Vector3))
+        {
+            return new Vector3Parser();
+        }
+
+        // Fall back to default types
+        return base.CreateParser(parameters, index);
+    }
+}
+```
+
+Register your custom parser factory in your startup class:
+
+```csharp
+services.RemoveAll(typeof(ICommandParameterParserFactory));
+services.AddSingleton<ICommandParameterParserFactory, MyCommandParameterParserFactory>();
+```
+
+Your custom parser receives the raw input string and should return a parsed value.
