@@ -66,7 +66,7 @@ Command names come from the `Name` property of the attribute. If `Name` is not s
 
 **Examples:**
 - Method `KillCommand()` → command name `kill`
-- Method `ServerStatus()` → command name `server_status`
+- Method `ServerStatus()` → command name `serverstatus`
 - Method `StatusCommand()` → command name `status`
 - Method `Help()` → command name `help`
 
