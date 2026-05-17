@@ -1,9 +1,9 @@
 ---
-title: Implementing Commands
+title: Command System
 uid: commands
 ---
 
-# Implementing Commands
+# Command System
 
 The SampSharp command system provides a declarative way to handle player and console commands through attributes. Commands are discovered automatically from <xref:SampSharp.Entities.ISystem> implementations and can include complex features like overloading, aliasing, command groups, and permission checking.
 
