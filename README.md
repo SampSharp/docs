@@ -69,30 +69,18 @@ docs/
 ├── getting-started.md          # Getting started guide
 ├── core-concepts/
 │   ├── toc.yml                 # Core concepts table of contents
-│   ├── index.md
-│   ├── entities-components.md
-│   ├── systems.md
-│   └── events.md
+│   └── ...
 ├── features/
 │   ├── toc.yml                 # Features table of contents
-│   ├── command-system.md
-│   ├── dialog-menus.md
-│   ├── players.md
-│   ├── timers.md
-│   ├── vehicles.md
-│   └── objects.md
+│   └── ...
 ├── reference/
 │   ├── toc.yml                 # Reference table of contents
-│   ├── advanced-topics.md
-│   └── examples.md
+│   └── ...
 ├── support/
 │   ├── toc.yml                 # Support table of contents
-│   ├── platform-support.md
-│   ├── migration-guide.md
-│   ├── troubleshooting.md
+│   └── ...
 ├── legacy/                     # Legacy/deprecated content
 │   ├── toc.yml
-│   ├── index.md
 │   └── ...
 └── toc.yml                     # Main table of contents
 ```
