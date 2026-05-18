@@ -43,7 +43,8 @@ All documentation is written in Markdown in the `docs/` folder. For Markdown syn
 #### Adding a New Page
 
 1. Create a new `.md` file in the appropriate folder under `docs/`:
-   - `docs/guides/` - How-to guides and tutorials
+   - `docs/core-concepts/` - ECS concepts and architecture fundamentals
+   - `docs/features/` - Feature-specific guides
    - `docs/reference/` - Reference material
    - `docs/support/` - Support content (troubleshooting, migration guides)
 
@@ -66,21 +67,21 @@ All documentation is written in Markdown in the `docs/` folder. For Markdown syn
 docs/
 ├── index.md                    # Home page
 ├── getting-started.md          # Getting started guide
-├── core-concepts.md            # Core concepts
-├── guides/
-│   ├── toc.yml                 # Guides table of contents
-│   ├── systems.md
-│   ├── components.md
+├── core-concepts/
+│   ├── toc.yml                 # Core concepts table of contents
+│   └── ...
+├── features/
+│   ├── toc.yml                 # Features table of contents
 │   └── ...
 ├── reference/
 │   ├── toc.yml                 # Reference table of contents
-│   ├── advanced-topics.md
 │   └── ...
 ├── support/
 │   ├── toc.yml                 # Support table of contents
-│   ├── troubleshooting.md
 │   └── ...
-├── legacy/                     # Deprecated content
+├── legacy/                     # Legacy/deprecated content
+│   ├── toc.yml
+│   └── ...
 └── toc.yml                     # Main table of contents
 ```
 
