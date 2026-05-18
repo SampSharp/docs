@@ -43,7 +43,8 @@ All documentation is written in Markdown in the `docs/` folder. For Markdown syn
 #### Adding a New Page
 
 1. Create a new `.md` file in the appropriate folder under `docs/`:
-   - `docs/guides/` - How-to guides and tutorials
+   - `docs/core-concepts/` - ECS concepts and architecture fundamentals
+   - `docs/features/` - Feature-specific guides
    - `docs/reference/` - Reference material
    - `docs/support/` - Support content (troubleshooting, migration guides)
 
@@ -66,21 +67,33 @@ All documentation is written in Markdown in the `docs/` folder. For Markdown syn
 docs/
 ├── index.md                    # Home page
 ├── getting-started.md          # Getting started guide
-├── core-concepts.md            # Core concepts
-├── guides/
-│   ├── toc.yml                 # Guides table of contents
+├── core-concepts/
+│   ├── toc.yml                 # Core concepts table of contents
+│   ├── index.md
+│   ├── entities-components.md
 │   ├── systems.md
-│   ├── components.md
-│   └── ...
+│   └── events.md
+├── features/
+│   ├── toc.yml                 # Features table of contents
+│   ├── command-system.md
+│   ├── dialog-menus.md
+│   ├── players.md
+│   ├── timers.md
+│   ├── vehicles.md
+│   └── objects.md
 ├── reference/
 │   ├── toc.yml                 # Reference table of contents
 │   ├── advanced-topics.md
-│   └── ...
+│   └── examples.md
 ├── support/
 │   ├── toc.yml                 # Support table of contents
+│   ├── platform-support.md
+│   ├── migration-guide.md
 │   ├── troubleshooting.md
+├── legacy/                     # Legacy/deprecated content
+│   ├── toc.yml
+│   ├── index.md
 │   └── ...
-├── legacy/                     # Deprecated content
 └── toc.yml                     # Main table of contents
 ```
 
