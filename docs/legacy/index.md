@@ -10,7 +10,7 @@ uid: legacy-docs
 >
 > **We strongly recommend using the new SampSharp for open.mp (v1.x) for all new projects.**
 >
-> The new version offers modern .NET support, active development, and many improvements. If you are starting a new project or planning to migrate, please refer to the <xref:getting-started> and <xref:migration-guide> for SampSharp v1.x.
+> The new version offers modern .NET support, active development, and many improvements. If you are starting a new project or planning to migrate, please refer to the <xref:quick-start> and <xref:migration-guide> for SampSharp v1.x.
 >
 > If you are maintaining an existing SA-MP server, you may continue using these legacy docs.
 

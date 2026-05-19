@@ -1,9 +1,18 @@
 items:
-- href: getting-started.md
-- href: core-concepts/toc.yml
-  name: Core Concepts
+- name: Getting Started
+- href: quick-start.md
+- href: core-concepts/index.md
+  name: Entity-Component-System
+- href: core-concepts/entities-components.md
+- href: core-concepts/systems.md
+- href: core-concepts/events.md
 - name: Features
-  href: features/toc.yml
+- href: features/command-system.md
+- href: features/dialog-menus.md
+- href: features/objects.md
+- href: features/players.md
+- href: features/timers.md
+- href: features/vehicles.md
 - name: Reference
   href: reference/toc.yml
 - name: Support

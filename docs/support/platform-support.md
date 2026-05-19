@@ -29,7 +29,7 @@ SampSharp v1.x was created to overcome fundamental limitations in the legacy cod
 > SampSharp v1.x delivers:
 > 
 > - **open.mp integration**: Built from the ground up to leverage open.mp's component extensibility platform, providing seamless integration with native open.mp features and future updates
-> - **Modern .NET support**: Full support for latest .NET LTS releases (11, 12, etc.) on Windows and Linux
+> - **Modern .NET support**: Full support for latest .NET releases (11, 12, etc.) on Windows and Linux
 > - **Better Linux support**: Reliable .NET runtime on Linux x86_64
 > - **Cleaner architecture**: Built with modern C# and design patterns for easier maintenance and feature development
 
@@ -66,7 +66,7 @@ If you're currently using SampSharp v0.x and considering upgrading to v1.x, see 
 
 Ready to start with SampSharp v1.x?
 
-- <xref:getting-started>
-- <xref:core-concepts>
+- <xref:quick-start>
+- <xref:ecs-overview>
 
 For legacy support and documentation, see the <xref:legacy-docs> section.

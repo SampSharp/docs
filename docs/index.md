@@ -1,3 +1,3 @@
 ---
-redirect_url: getting-started.html
+redirect_url: quick-start.html
 ---

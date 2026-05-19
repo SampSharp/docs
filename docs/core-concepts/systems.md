@@ -5,9 +5,9 @@ uid: systems
 
 # Systems
 
-In SampSharp's Entity-Component-System (ECS) architecture, **systems** are classes that contain the logic for your game mode. Systems process entities and their components, respond to events, and can handle player or console commands. They are the main way to organize your server's behavior, keeping your code modular and maintainable.
+In SampSharp's Entity-Component-System (ECS) architecture, **systems** are classes that contain the logic for your gamemode. Systems process entities and their components, respond to events, and can handle player or console commands. They are the main way to organize your server's behavior, keeping your code modular and maintainable.
 
-For a high-level overview of ECS and systems, see <xref:core-concepts>.
+For a high-level overview of ECS and systems, see <xref:ecs-overview>.
 
 
 ## How to Create a System
@@ -48,7 +48,7 @@ public class MyFirstSystem : ISystem
     [Event]
     public void OnGameModeInit(IWorldService world, IEntityManager entityManager)
     {
-        // Called when the game mode starts.
+        // Called when the gamemode starts.
         var vehicle = world.CreateVehicle(VehicleModelType.Landstalker, new Vector3(0, 6, 15), 45, 4, 4);
         vehicle.SetNumberPlate("SampSharp");
     }

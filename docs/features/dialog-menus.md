@@ -32,7 +32,7 @@ Inject `IDialogService` into any event handler or system method and call `Show` 
 public class MySystem : ISystem
 {
     [Event]
-    public void OnPlayerSpawn(Player player, IDialogService dialogs)
+    public void OnPlayerConnect(Player player, IDialogService dialogs)
     {
         var dialog = new MessageDialog(
             caption: "Welcome",
@@ -53,7 +53,7 @@ public class MySystem : ISystem
 
 ```csharp
 [Event]
-public async Task OnPlayerSpawn(Player player, IDialogService dialogs)
+public async Task OnPlayerConnect(Player player, IDialogService dialogs)
 {
     var dialog = new MessageDialog("Welcome", "Press OK to continue.", "OK");
     var response = await dialogs.ShowAsync(player, dialog);
@@ -272,7 +272,7 @@ Because `ShowAsync` returns a `Task`, you can chain multiple dialogs in a single
 
 ```csharp
 [Event]
-public async Task OnPlayerSpawn(Player player, IDialogService dialogs)
+public async Task OnPlayerConnect(Player player, IDialogService dialogs)
 {
     var rules = new MessageDialog("Rules", "Do you accept the rules?", "Yes", "No");
     var rulesResponse = await dialogs.ShowAsync(player, rules);
@@ -402,7 +402,7 @@ public class MenuEventSystem : ISystem
 ```
 
 > [!TIP]
-> `OnPlayerSelectedMenuRow` fires globally — it is not scoped to a specific menu instance. When your game mode shows different menus to the same player, attach a custom [component](xref:entities-components) to the player that records which menu is currently visible, and read it in the event handler to dispatch the row to the right code.
+> `OnPlayerSelectedMenuRow` fires globally — it is not scoped to a specific menu instance. When your gamemode shows different menus to the same player, attach a custom [component](xref:entities-components) to the player that records which menu is currently visible, and read it in the event handler to dispatch the row to the right code.
 
 ### Disabling rows
 

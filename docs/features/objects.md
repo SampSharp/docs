@@ -9,7 +9,7 @@ Objects are static or dynamic entities in the world that can be created, positio
 
 ## Creating Objects
 
-To create a global object visible to all players, use <xref:SampSharp.Entities.SAMP.IWorldService.CreateObject>:
+To create a global object visible to all players, use <xref:SampSharp.Entities.SAMP.IWorldService.CreateObject*>:
 
 ```csharp
 [Event]
@@ -30,7 +30,7 @@ See <xref:SampSharp.Entities.SAMP.IWorldService> for all available parameters.
 
 ## Player Objects
 
-Player objects are only visible to a specific player, making them useful for personalized or player-specific world elements. Create player objects using <xref:SampSharp.Entities.SAMP.IWorldService.CreatePlayerObject>:
+Player objects are only visible to a specific player, making them useful for personalized or player-specific world elements. Create player objects using <xref:SampSharp.Entities.SAMP.IWorldService.CreatePlayerObject*>:
 
 ```csharp
 [Event]

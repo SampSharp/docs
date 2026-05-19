@@ -10,7 +10,7 @@ uid: examples
 
 <!--
 TODO: Provide practical examples including:
-- Complete hello world game mode
-- Basic deathmatch game mode
+- Complete hello world gamemode
+- Basic deathmatch gamemode
 - Admin panel implementation
 -->
