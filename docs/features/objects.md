@@ -59,7 +59,7 @@ public void OnObjectMoved(GlobalObject obj)
 }
 ```
 
-See <xref:events> for a full list of available object events.
+See <xref:built-in-events> for a full list of available object events.
 
 ## Manipulating Objects
 

@@ -35,27 +35,27 @@ You can respond to vehicle-related events such as when a vehicle spawns, a playe
 ```csharp
 public class VehicleEventSystem : ISystem
 {
-	[EventHandler]
-	public void OnVehicleSpawn(Vehicle vehicle)
-	{
-		Console.WriteLine($"Vehicle spawned: {vehicle.Model}");
-	}
+    [Event]
+    public void OnVehicleSpawn(Vehicle vehicle)
+    {
+        Console.WriteLine($"Vehicle spawned: {vehicle.Model}");
+    }
 
-	[EventHandler]
-	public void OnPlayerEnterVehicle(Player player, Vehicle vehicle, bool isPassenger)
-	{
-		Console.WriteLine($"{player} entered vehicle {vehicle.Model}");
-	}
+    [Event]
+    public void OnPlayerEnterVehicle(Player player, Vehicle vehicle, bool isPassenger)
+    {
+        Console.WriteLine($"{player} entered vehicle {vehicle.Model}");
+    }
 
-	[EventHandler]
-	public void OnPlayerExitVehicle(Player player, Vehicle vehicle)
-	{
-		Console.WriteLine($"{player} exited vehicle {vehicle.Model}");
-	}
+    [Event]
+    public void OnPlayerExitVehicle(Player player, Vehicle vehicle)
+    {
+        Console.WriteLine($"{player} exited vehicle {vehicle.Model}");
+    }
 }
 ```
 
-For a full list of available vehicle events, see <xref:events>.
+For a full list of available vehicle events, see <xref:built-in-events>.
 
 ## Manipulating Vehicles
 
@@ -77,10 +77,8 @@ vehicle.Engine = true;
 // Check if the vehicle has a trailer
 if (vehicle.HasTrailer)
 {
-	Console.WriteLine("This vehicle has a trailer attached.");
+    Console.WriteLine("This vehicle has a trailer attached.");
 }
 ```
 
 See <xref:SampSharp.Entities.SAMP.Vehicle> for all available properties and methods.
-
-
