@@ -1,0 +1,2 @@
+- [Project architecture](project-architecture.md) — Two-layer API (Core vs Entities), key services, dialog/menu internals
+- [Docs conventions](docs-conventions.md) — Article structure, style, code sample idioms, toc.yml layout, AGENTS.md content
