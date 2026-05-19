@@ -1,5 +1,5 @@
 ---
-title: Working with Players
+title: Players
 uid: players
 ---
 

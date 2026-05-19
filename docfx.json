@@ -19,7 +19,7 @@
     "content": [
       {
         "files": ["**/*.{md,yml}"],
-        "exclude": ["_site/**", "sampsharp-src/**"]
+        "exclude": ["_site/**", "sampsharp-src/**", ".claude/**", ".github/**"]
       }
     ],
     "resource": [

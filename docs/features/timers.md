@@ -1,5 +1,5 @@
 ---
-title: Timers and Scheduling
+title: Timers
 uid: timers
 ---
 
