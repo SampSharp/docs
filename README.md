@@ -65,13 +65,13 @@ All documentation is written in Markdown in the `docs/` folder. For Markdown syn
 
 ```
 docs/
-├── index.md                    # Home page
-├── getting-started.md          # Getting started guide
-├── core-concepts/
-│   ├── toc.yml                 # Core concepts table of contents
+├── index.md                    # Home page (redirects to quick-start)
+├── quick-start.md              # Quick Start guide
+├── getting-started.md          # Redirect stub for legacy URL
+├── core-concepts/              # ECS pages (linked directly from root TOC)
+│   ├── index.md                # Entity-Component-System overview
 │   └── ...
-├── features/
-│   ├── toc.yml                 # Features table of contents
+├── features/                  # Feature pages (linked directly from root TOC)
 │   └── ...
 ├── reference/
 │   ├── toc.yml                 # Reference table of contents

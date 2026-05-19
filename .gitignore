@@ -2,3 +2,5 @@ _site/**
 
 api/**
 !api/index.md
+
+.vscode/

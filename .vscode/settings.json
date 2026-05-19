@@ -1,7 +1,0 @@
-{
-  "chat.tools.terminal.autoApprove": {
-    "docfx": true,
-    "test": true
-  },
-  "cSpell.words": ["blockquotes", "frontmatter", "sampsharp", "textdraw"]
-}

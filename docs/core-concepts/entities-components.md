@@ -74,21 +74,21 @@ entityManager.AddComponent<BankAccount>(childId, parentId);
 
 - Destroying a parent entity will recursively destroy all its children and their components.
 
-### Entity Hierarchy Example
+### Example: round-scoped entities
 
-Below is a diagram showing entities, their nested structure, and attached components:
+A common use case for entity hierarchies is **lifetime grouping**: tie a set of transient entities to a single parent, then destroy the parent to clean them all up at once. All `IWorldService.Create*` methods accept an optional `parent` parameter for exactly this.
 
+For example, a deathmatch round that spawns weapon pickups and a control zone can parent everything to a `Round` entity. Destroying that entity at the end of the round removes the pickups and gang zone in one call:
 
 ```mermaid
 graph TD
-    A(Root Entity) --> B[Player]
-    A --> C[BankAccount]
-    A --> E[Inventory]
-    A --> D(Child Entity)
-    D --> F[Vehicle]
-    D --> I[IgnitionLock]
-    A --> G(Another Child Entity)
-    G --> H[QuestStatus]
+    R(Round Entity) --> RC[Round]
+    R --> P1(Pickup Entity)
+    P1 --> P1C[Pickup]
+    R --> P2(Pickup Entity)
+    P2 --> P2C[Pickup]
+    R --> GZ(GangZone Entity)
+    GZ --> GZC[GangZone]
 ```
 
 ## Destroying Entities and Components
