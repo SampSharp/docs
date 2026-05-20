@@ -144,7 +144,7 @@ class PlayerSystem : ISystem
 
 Ready to build? Check out the resources below:
 
-- **[Documentation](~/docs/index.md)** — Learn the framework concepts and architecture
+- **[Documentation](xref:quick-start)** — Learn the framework concepts and architecture
 - **[Sample Projects](https://github.com/SampSharp/samples)** — Real-world examples to learn from
 
 ---

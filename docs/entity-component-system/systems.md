@@ -76,7 +76,6 @@ To disable automatic loading, call `DisableDefaultSystemsLoading()` in your `Sta
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
-using SampSharp.Entities;
 
 public class Startup : IEcsStartup
 {
