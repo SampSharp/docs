@@ -1,12 +1,13 @@
 items:
 - name: Getting Started
-- href: quick-start.md
-- href: core-concepts/index.md
+- href: getting-started/quick-start.md
+- href: entity-component-system/overview.md
   name: Entity-Component-System
-- href: core-concepts/entities-components.md
-- href: core-concepts/systems.md
-- href: core-concepts/events.md
-- href: core-concepts/startup.md
+- href: entity-component-system/entities-components.md
+- href: entity-component-system/systems.md
+- href: entity-component-system/events.md
+- name: Host configuration
+  href: host-configuration/toc.yml
 - name: Features
 - href: features/command-system.md
 - href: features/dialog-menus.md

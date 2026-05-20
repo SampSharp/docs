@@ -166,8 +166,6 @@ Middleware allows you to intercept and modify event handling behavior. Middlewar
 You can use middleware to log all events, validate data before handlers run, check permissions, or apply other centralized logic across events. Configure middleware in your `Startup` class using the <xref:SampSharp.Entities.IEcsBuilder>:
 
 ```csharp
-using SampSharp.Entities;
-
 public class MyMiddleware
 {
     private readonly EventDelegate _next;

@@ -1,18 +1,19 @@
 ---
-title: Startup and configuration
+title: Startup
 uid: startup
 ---
 
-# Startup and configuration
+# Startup
 
 Every SampSharp gamemode begins with a `Startup` class that implements <xref:SampSharp.Entities.IEcsStartup>. SampSharp creates an instance of this class when the gamemode loads and uses it to wire up the ECS framework, register services into the DI container, and configure event handling.
+
+This article focuses on the startup lifecycle and the ECS host builder. Application configuration sources (open.mp config, `appsettings.json`, environment variables) are covered in [Configuration](xref:configuration), and logging setup is covered in [Logging](xref:logging).
 
 The project template generates a minimal startup:
 
 ```csharp
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SampSharp.Entities;
-using SampSharp.Entities.SAMP.Commands;
 using SampSharp.OpenMp.Core;
 
 public class Startup : IEcsStartup
@@ -22,7 +23,7 @@ public class Startup : IEcsStartup
         context.UseEntities().UseCommands();
     }
 
-    public void ConfigureServices(IServiceCollection services)
+    public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
     {
     }
 
@@ -32,12 +33,15 @@ public class Startup : IEcsStartup
 }
 ```
 
+> [!NOTE]
+> `SampSharp.Sdk` provides global `using`s for `SampSharp.Entities`, `SampSharp.Entities.SAMP`, and `SampSharp.Entities.SAMP.Commands`, so the snippets in the rest of these docs leave them out. Add them back explicitly if you're not using the SDK.
+
 The three methods run at different points during startup:
 
 | Method | Runs | Used for |
 |---|---|---|
 | `Initialize(IStartupContext)` | Earliest. Has access to the open.mp host. | Calling `UseEntities()` and adding feature modules (`UseCommands`, custom hosts). |
-| `ConfigureServices(IServiceCollection)` | After the service collection is created, before the provider is built. | Adding your own services to dependency injection. |
+| `ConfigureServices(IServiceCollection, IConfiguration)` | After the service collection is created, before the provider is built. | Adding your own services to dependency injection. |
 | `Configure(IEcsBuilder)` | After the service provider is built, just before `OnGameModeInit` fires. | Final pre-launch work that needs resolved services — preloading data, warming up caches, kicking off background services. |
 
 ## Initialize and the ECS host builder
@@ -49,7 +53,6 @@ public void Initialize(IStartupContext context)
 {
     context.UseEntities()
         .UseCommands()
-        .ConfigureLogging(logging => logging.SetMinimumLevel(LogLevel.Information))
         .ConfigureUnhandledExceptionHandler((sp, where, ex) =>
         {
             var log = sp.GetRequiredService<ILogger<Startup>>();
@@ -62,7 +65,8 @@ The host builder supports the following configuration:
 
 - **`Configure(Action<IEcsBuilder>)`** — schedules a callback that runs after the service provider is built, just before `OnGameModeInit` fires. The same hook as the `Configure` method on `IEcsStartup`, but exposed on the host builder so a feature module can register its own pre-launch work.
 - **`ConfigureServices(Action<IServiceCollection>)`** — register services. Useful when a feature module wants to add its own services on top of yours. There's also an overload that exposes the `SampSharpEnvironment` if you need it.
-- **`ConfigureLogging(Action<ILoggingBuilder>)`** — set log levels, add custom providers (Serilog, file logging, etc.). open.mp's console logger is added automatically.
+- **`ConfigureLogging(Action<ILoggingBuilder>)`** — set log levels, add custom providers (Serilog, file logging, etc.). open.mp's console logger is added automatically. See [Logging](xref:logging) for details.
+- **`ConfigureAppConfiguration(Action<IConfigurationBuilder>)`** — add or override sources for the unified `IConfiguration`. See [Configuration](xref:configuration) for the full source list and precedence.
 - **`ConfigureUnhandledExceptionHandler(UnhandledExceptionHandler)`** — replace the default handler for uncaught exceptions thrown from event handlers, systems, timers, etc. The default writes the exception to the configured logger; override it to forward to an error tracker or take other action.
 - **`UseServiceProviderFactory<T>(IServiceProviderFactory<T>)`** — swap out the default Microsoft DI container for an alternative such as Autofac, Lamar, or DryIoc.
 - **`DisableDefaultSystemsLoading()`** — by default SampSharp scans the entry assembly and registers every `ISystem` it finds. Call this to opt out and register systems manually with `services.AddSystem<T>()`.
@@ -96,14 +100,15 @@ public static class MyFeatureExtensions
 
 ## ConfigureServices
 
-The `ConfigureServices(IServiceCollection)` method on `IEcsStartup` is where you register your own services for [dependency injection](xref:systems#dependency-injection) into systems and event handlers:
+The `ConfigureServices` method on `IEcsStartup` is where you register your own services for [dependency injection](xref:systems#dependency-injection) into systems and event handlers. The `IConfiguration` parameter gives you access to all configuration sources at registration time (see [Configuration](xref:configuration)):
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
+public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
 {
     services.AddSingleton<IBankService, BankService>();
     services.AddSingleton<IPersistenceService, SqlitePersistenceService>();
-    services.AddDbContext<GameDbContext>(o => o.UseSqlite("Data Source=game.db"));
+    services.AddDbContext<GameDbContext>(o =>
+        o.UseSqlite(configuration["Database:ConnectionString"]));
 }
 ```
 
@@ -140,7 +145,8 @@ When you call `UseEntities()`, SampSharp automatically registers a baseline of s
 - **Core infrastructure** — <xref:SampSharp.Entities.IEntityManager>, <xref:SampSharp.Entities.IEventDispatcher>, <xref:SampSharp.Entities.ISystemRegistry>, and an `IUnhandledExceptionHandler`.
 - **Built-in systems** — `TimerSystem` (exposed as <xref:SampSharp.Entities.ITimerService>) and `TickingSystem`.
 - **SAMP services** — <xref:SampSharp.Entities.SAMP.IWorldService>, <xref:SampSharp.Entities.SAMP.IServerService>, <xref:SampSharp.Entities.SAMP.IDialogService>, <xref:SampSharp.Entities.SAMP.INpcService>, plus all the open.mp event handlers that translate native callbacks into SampSharp events.
-- **Logging** — `ILogger<T>` backed by open.mp's console logger. Add more providers via `ConfigureLogging`.
+- **Logging** — `ILogger<T>` backed by open.mp's console logger. See [Logging](xref:logging).
+- **Configuration** — an `IConfiguration` populated from the open.mp config, environment variables, and `appsettings.json`. See [Configuration](xref:configuration).
 - **Auto-discovered systems** — every public `ISystem` type in the entry assembly, unless you call `DisableDefaultSystemsLoading()`.
 
 Feature modules (like `UseCommands`) layer on top of this baseline.
