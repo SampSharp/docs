@@ -6,11 +6,17 @@ items:
 - href: core-concepts/entities-components.md
 - href: core-concepts/systems.md
 - href: core-concepts/events.md
+- href: core-concepts/startup.md
 - name: Features
 - href: features/command-system.md
 - href: features/dialog-menus.md
+- href: features/gang-zones.md
+- href: features/npcs.md
 - href: features/objects.md
+- href: features/pickups.md
 - href: features/players.md
+- href: features/text-draws.md
+- href: features/text-labels.md
 - href: features/timers.md
 - href: features/vehicles.md
 - name: Reference
