@@ -20,13 +20,34 @@ public void OnGameModeInit(IWorldService worldService)
         VehicleModelType.Infernus,
         new Vector3(1500, -1500, 14), // position
         90f,                          // rotation (degrees)
-        color1: 1,                    // primary color
-        color2: 1                     // secondary color
+        color1: -1,                   // -1 = random primary color
+        color2: -1,                   // -1 = random secondary color
+        respawnDelay: 60              // seconds without a driver before respawn; -1 disables respawn
     );
 }
 ```
 
+A few parameter notes worth knowing:
+
+- Pass `-1` for `color1` / `color2` to get a random color.
+- `respawnDelay` is in seconds; pass `-1` to disable automatic respawn entirely.
+- `addSiren` only has an effect on vehicle models that already have a horn.
+
 See <xref:SampSharp.Entities.SAMP.IWorldService> for all available parameters.
+
+### Static vehicles
+
+<xref:SampSharp.Entities.SAMP.IWorldService.CreateStaticVehicle*> creates a vehicle with pre-loaded models, intended for permanent spawn points configured during `OnGameModeInit`. Beyond efficiency, it is also the only way to create train models (537 and 538) — regular `CreateVehicle` cannot spawn trains.
+
+```csharp
+worldService.CreateStaticVehicle(
+    VehicleModelType.FreightTrain,                // model 537
+    new Vector3(1750, -1950, 14),
+    0f,
+    color1: -1, color2: -1);
+```
+
+For everything else, use `CreateVehicle` so you can also create vehicles outside of init (mission spawns, garage purchases, etc.).
 
 ## Handling Vehicle Events
 
@@ -82,3 +103,7 @@ if (vehicle.HasTrailer)
 ```
 
 See <xref:SampSharp.Entities.SAMP.Vehicle> for all available properties and methods.
+
+## Lifetime
+
+A `Vehicle` component is destroyed when you call `Destroy()` on it, when its parent entity is destroyed, or when the server shuts down. As with any component, holding the reference across an `await` or timer callback can yield a destroyed instance — guard with `if (vehicle)` before use. See [Component liveness](xref:entities-components#component-liveness) for the full explanation.

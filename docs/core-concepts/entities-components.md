@@ -10,7 +10,7 @@ In SampSharp, an **entity** is a unique object in the game world, such as a play
 Entities and components are the building blocks of the ECS architecture:
 - Entities are identified by an `EntityId` (<xref:SampSharp.Entities.EntityId>)
 - Components are subclasses of <xref:SampSharp.Entities.Component>
-- Systems operate on entities by querying for specific component combinations
+- Systems operate on entities by handling events; the dispatcher resolves the relevant components from the involved entities and passes them to the handler
 
 ## Creating Entities
 
@@ -111,6 +111,25 @@ You can also destroy a single component:
 ```csharp
 component.Destroy();
 ```
+
+## Component Liveness
+
+Once a component is destroyed — directly via `Destroy()`, indirectly via `DestroyEntity()`, or when its underlying game object goes away (for example, when a player disconnects) — the C# object remains in memory until the garbage collector reclaims it, but calling methods or accessing properties that touch the underlying native handle will throw `ObjectDisposedException`.
+
+If your code holds onto a component across a boundary where it could have been destroyed in the meantime — typically across `await`, a timer callback, or a captured closure — check liveness before using it:
+
+```csharp
+[Event]
+public async Task OnPlayerConnect(Player player)
+{
+    await SomeLongRunningWorkAsync();
+
+    if (player)
+        player.SendClientMessage("Welcome back to your seat.");
+}
+```
+
+Every component is implicitly truthy when alive and falsy when destroyed or `null`, so `if (component)` is enough. The underlying flag is also exposed as `component.IsComponentAlive` if you need to read it explicitly. Inside `OnDestroyComponent`, the related `IsDestroying` property is `true` — useful for distinguishing the destruction pass from normal operation.
 
 ## Working with Components from a Component
 

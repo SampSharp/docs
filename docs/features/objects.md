@@ -19,7 +19,7 @@ public void OnGameModeInit(IWorldService worldService)
         modelId: 18631,                         // object model ID
         position: new Vector3(100, 200, 30),    // position
         rotation: new Vector3(0, 0, 45),        // rotation
-        drawDistance: 300                       // draw distance
+        drawDistance: 300                       // override; pass 0 to use the engine default
     );
 }
 ```
@@ -27,6 +27,9 @@ public void OnGameModeInit(IWorldService worldService)
 The returned component is of type <xref:SampSharp.Entities.SAMP.GlobalObject> (named as such because `Object` is reserved for `System.Object`).
 
 See <xref:SampSharp.Entities.SAMP.IWorldService> for all available parameters.
+
+> [!NOTE]
+> The base game has a hard cap of 1000 simultaneous global objects (`MAX_OBJECTS`). If you regularly need more, scope objects per player with `CreatePlayerObject` (also 1000 per player) or look into a streamer plugin.
 
 ## Player Objects
 
@@ -71,4 +74,8 @@ obj.Rotation = new Vector3(0, 0, 90);      // Change rotation
 ```
 
 See <xref:SampSharp.Entities.SAMP.GlobalObject> for the full API.
+
+## Lifetime
+
+A `GlobalObject` or `PlayerObject` is destroyed when you call `Destroy()` on it, when its parent entity is destroyed (a `PlayerObject` is destroyed when its owning player disconnects), or when the server shuts down. As with any component, holding the reference across an `await` or timer callback can yield a destroyed instance — guard with `if (obj)` before use. See [Component liveness](xref:entities-components#component-liveness) for the full explanation.
 
