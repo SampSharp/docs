@@ -291,7 +291,7 @@ public class CivilianComponent : Component { }
 public void CivOnlyCommand(CivilianComponent civilian)
 {
     // Only players with the CivilianComponent can use this command
-    civilian.Player.SendClientMessage("You are a civilian!");
+    civilian.GetComponent<Player>()!.SendClientMessage("You are a civilian!");
 }
 ```
 
